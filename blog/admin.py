@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Hero, RecipeDetail, Recipes
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -22,3 +22,16 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+class RecipeDetailInline(admin.TabularInline):  # You can use admin.TabularInline for a more compact display
+    model = RecipeDetail
+    extra = 1  # Number of empty forms to display
+
+@admin.register(Recipes)
+class RecipeAdmin(admin.ModelAdmin):
+    inlines = [RecipeDetailInline]
+
+
+admin.site.register(RecipeDetail)
+
+admin.site.register(Hero)
