@@ -1,14 +1,25 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Hero, Recipes, RecipeDetail
 from .forms import CommentForm
+
+class HomeView(View):
+
+    def get(self, request, *args, **kwargs):
+        template_name = "index.html"
+        hero_instance = Hero.objects.first()
+        return render(
+            request,
+            template_name,
+            {'hero': hero_instance}
+        )
 
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
+    template_name = "blogs.html"
     paginate_by = 6
 
 
@@ -53,16 +64,18 @@ class PostDetail(View):
         else:
             comment_form = CommentForm()
 
+        context = {
+            "post": post,
+            "comments": comments,
+            "commented": True,
+            "comment_form": comment_form,
+            "liked": liked
+        }
+
         return render(
             request,
             "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-                "liked": liked
-            },
+            context,
         )
 
 
@@ -76,3 +89,53 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    
+class AboutUs(View):
+
+    template_name = 'aboutus.html'
+    
+    def get(self, request, *args, **kwargs):
+        
+        return render(
+            request,
+            self.template_name,
+        )
+    
+class Contact(View):
+
+    template_name = 'contact.html'
+    
+    def get(self, request, *args, **kwargs):
+        
+        return render(
+            request,
+            self.template_name,
+        )
+    
+
+class RecipesView(View):
+
+    template_name = 'recipes.html'
+    
+    def get(self, request, *args, **kwargs):
+        recipes = Recipes.objects.all()
+        context = {'recipes': recipes}
+        return render(
+            request,
+            self.template_name,
+            context,
+        )
+
+class RecipeDetailView(View):
+
+    template_name = 'recipedetail.html'
+  
+    def get(self, request, recipe_id, *args, **kwargs):
+        recipe = get_object_or_404(Recipes, id=recipe_id)
+        recipedetail = RecipeDetail.objects.filter(recipe=recipe)
+        context = {'recipedetail': recipedetail[0]}
+        return render(
+            request,
+            self.template_name,
+            context
+        )
