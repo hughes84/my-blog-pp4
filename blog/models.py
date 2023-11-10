@@ -2,6 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
+class Hero(models.Model):
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='hero_images/')
+    def __str__(self):
+        return self.title
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Post(models.Model):
@@ -39,3 +47,22 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Recipes(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    preparation_time = models.PositiveIntegerField()
+    recipeimage = CloudinaryField('image', default='place_holder')
+    servings = models.PositiveIntegerField()
+    def __str__(self):
+        return self.title
+
+
+class RecipeDetail(models.Model):
+    recipe = models.OneToOneField(Recipes, on_delete=models.CASCADE, related_name='details')
+    ingredients = models.TextField()
+    instructions = models.TextField()
+    notes = models.TextField()
+    def __str__(self):
+        return f"{self.recipe.title} - Details"
