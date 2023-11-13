@@ -78,7 +78,7 @@ body {
     overflow: hidden;
 }
 
-.masthead-image:after {
+/* .masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -90,11 +90,11 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
-}
+} */
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #614446;
 }
 
 .post-link:hover,
@@ -182,9 +182,9 @@ nav.main-navigation ul.nav-list {
 .hero-overlay {
     width: fit-content;
     height: fit-content;
-    background-color: #404040;
+    background-color: #c55219;
     margin: 50px 0px 0 50px;
-    padding: 20px;
+    padding: 1px;
 }
 
 .jumbotron {
