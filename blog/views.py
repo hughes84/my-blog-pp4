@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Hero, Recipes, RecipeDetail
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
+from django.core.mail import EmailMessage
+from django.conf import settings
 
 class HomeView(View):
 
@@ -44,7 +46,7 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
 
         queryset = Post.objects.filter(status=1)
@@ -80,7 +82,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -89,34 +91,52 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-    
+
 class AboutUs(View):
 
     template_name = 'aboutus.html'
-    
+
     def get(self, request, *args, **kwargs):
-        
+
         return render(
             request,
             self.template_name,
         )
-    
+
 class Contact(View):
 
     template_name = 'contact.html'
-    
+
     def get(self, request, *args, **kwargs):
-        
+        form = ContactForm()
         return render(
             request,
             self.template_name,
+            {'form': form},
         )
-    
+
+    def post(self, request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            # Send email
+            subject = 'Contact Form Submission'
+            body = f'Name: {name}\nEmail: {email}\nMessage: {message}'
+            to_email = settings.EMAIL_HOST_USER
+            email_message = EmailMessage(subject, body, to=[to_email])
+            email_message.send()
+            return render(request, 'thankyou.html')
+        form = ContactForm()
+        return render(request, self.template_name, {'form': form})
+
 
 class RecipesView(View):
 
     template_name = 'recipes.html'
-    
+
     def get(self, request, *args, **kwargs):
         recipes = Recipes.objects.all()
         context = {'recipes': recipes}
@@ -129,7 +149,7 @@ class RecipesView(View):
 class RecipeDetailView(View):
 
     template_name = 'recipedetail.html'
-  
+
     def get(self, request, recipe_id, *args, **kwargs):
         recipe = get_object_or_404(Recipes, id=recipe_id)
         recipedetail = RecipeDetail.objects.filter(recipe=recipe)
