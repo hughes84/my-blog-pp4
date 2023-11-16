@@ -1,14 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+#pylint: disable=no-member
 
 
 class Hero(models.Model):
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=200)
     image = models.ImageField(upload_to='hero_images/')
-    def __str__(self):
-        return self.title
+    content_header = models.CharField(max_length=200, blank=True)
+    content = models.CharField(max_length=200, blank=True)
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -27,8 +28,7 @@ class Post(models.Model):
     class Meta:
         ordering = ['-created_on']
 
-    def __str__(self):
-        return self.title
+
 
     def number_of_likes(self):
         return self.likes.count()
@@ -55,8 +55,7 @@ class Recipes(models.Model):
     preparation_time = models.PositiveIntegerField()
     recipeimage = CloudinaryField('image', default='place_holder')
     servings = models.PositiveIntegerField()
-    def __str__(self):
-        return self.title
+
 
 
 class RecipeDetail(models.Model):
