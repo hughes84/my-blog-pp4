@@ -74,19 +74,6 @@
 
     </nav>
 
-    <div class="container">
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
     <main class="flex-shrink-0 main-bg ">
         {% block content %}
         <!-- Content Goes here -->
@@ -94,9 +81,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-4 dark-bg">
-        <div>
-            
+    <footer class="footer mt-auto py-4 dark-bg">                  
         <p class="m-0 text-center text-white">Copyright of @hug_hes84 
             <br>Follow us: 
         <a href="https://hughes84.github.io/my-blog-pp4/" target="_blank" rel="noopener"
@@ -108,7 +93,6 @@
 
             <a href=https://slack.com rel="noopener" target="_blank"
                 aria-label="slack (opens in a new tab)"><i class="fab fa-brands fa-slack"></i></a></p>
-            </div>
     </footer>
     <script>
         setTimeout(function () {
