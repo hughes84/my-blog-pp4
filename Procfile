@@ -1,1 +1,1 @@
-web: gunicorn nutrition2023.wsgi
+web: gunicorn nutrition.wsgi
