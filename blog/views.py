@@ -10,11 +10,11 @@ class HomeView(View):
 
     def get(self, request, *args, **kwargs):
         template_name = "index.html"
-        hero_instance = Hero.objects.first()
+        # hero_instance = Hero.objects.first()
         return render(
             request,
             template_name,
-            {'hero': hero_instance}
+            # {'hero': hero_instance}
         )
 
 
