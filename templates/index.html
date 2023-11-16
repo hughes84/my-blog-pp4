@@ -3,13 +3,19 @@
 {% block content %}
 
 
-<div class="h-100">
+<div class="homepage-container">
     <div class="jumbotron jumbotron-fluid text-center text-white bg-dark" style="background-image: url('{{ hero.image.url }}'); background-size: cover;">
         <div class="hero-overlay">
-            
-            <h1 class="display-4">{{ hero.title }}</h1>
-            <p class="lead">{{ hero.subtitle }}</p>
+            <div class="overlay-header">
+                <h1 class="display-4">{{ hero.title }}</h1>
+                <p class="lead">{{ hero.subtitle }}</p>
+            </div>
+            <div class="overlay-body">  
+                <p class="display-4">{{ hero.content_header }}</p>
+                <p class="lead">{{ hero.content }}</p>
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
