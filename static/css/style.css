@@ -59,7 +59,7 @@ body {
 }
 
 .masthead {
-    margin-top: 40px;
+    margin-top: 10px;
     
 }
 
@@ -77,16 +77,6 @@ body {
 .post-link:hover,
 .page-link {
     color: #E84610;
-}
-
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
 }
 
 .btn-signup {
@@ -157,21 +147,32 @@ nav.main-navigation ul.nav-list {
 }
 
 .hero-overlay {
-    width: fit-content;
-    height: fit-content;
+    width: 400px;
+    height: fit-content;  
+    margin: 50px 0px 0 30px;
+      
+}
+
+.overlay-header {
     background-color: rgba(245, 91, 13, 0.507);
-    margin: 50px 0px 0 50px;
-    padding: 1px;
     border: solid white 2px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.overlay-body {
+    background-color: rgba(245, 91, 13, 0.507);
+    border: solid white 2px;
+    padding: 10px;
+}
+
+.homepage-container {
+    height: 130%;
 }
 
 .jumbotron {
-    height: 100% !important;
+    height: 80% !important;
     
-}
-
-.hero-image {
-    height: 100%;
 }
 
 .nav-list li.nav-list-item {
@@ -378,4 +379,10 @@ form p {
 
 .contact-btn:hover {
     background-color: white;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
