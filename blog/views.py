@@ -7,14 +7,13 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 
 class HomeView(View):
-
+    template_name = "index.html"
     def get(self, request, *args, **kwargs):
-        template_name = "index.html"
-        hero_instance = Hero.objects.first()
+        # hero_instance = Hero.objects.first()
         return render(
             request,
-            template_name,
-            {'hero': hero_instance}
+            self.template_name,
+            # {'hero': hero_instance}
         )
 
 
