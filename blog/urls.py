@@ -12,4 +12,4 @@ urlpatterns = [
     path('recipes', views.RecipesView.as_view(), name='recipes'),
     path('recipedetail/<int:recipe_id>/', views.RecipeDetailView.as_view(), name='recipedetail'),
 
-] 
+]

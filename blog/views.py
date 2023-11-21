@@ -9,11 +9,11 @@ from django.conf import settings
 class HomeView(View):
     template_name = "index.html"
     def get(self, request, *args, **kwargs):
-        # hero_instance = Hero.objects.first()
+        hero_instance = Hero.objects.first()
         return render(
             request,
             self.template_name,
-            # {'hero': hero_instance}
+            {'hero': hero_instance}
         )
 
 

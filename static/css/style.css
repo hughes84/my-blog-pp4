@@ -175,6 +175,10 @@ nav.main-navigation ul.nav-list {
     
 }
 
+main {
+    padding-bottom: 100px;
+}
+
 .nav-list li.nav-list-item {
     display: inline-block;
     line-height: 40px;
