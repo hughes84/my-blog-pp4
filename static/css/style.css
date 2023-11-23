@@ -390,3 +390,20 @@ form p {
     bottom: 0;
     width: 100%;
 }
+
+.delete-comment-icon:hover::after {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    content: 'Delete';
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    top: -30px;
+    right: -50px;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 3px;
+    z-index: 1;
+}

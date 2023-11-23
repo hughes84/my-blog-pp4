@@ -74,14 +74,18 @@
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
+                    <p class="font-weight-bold position-relative">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
                         </span> wrote:
+                        {% if comment.name == user.username %}
+                    <button class="delete-comment btn-info btn float-right delete-comment-icon" data-url="{% url 'delete_object' model='Comment' pk=comment.id %}">x</button>
+                    {% endif %}
                     </p>
+                    
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
@@ -112,5 +116,20 @@
         </div>
     </div>
 </div>
-
+<script>
+    $('.delete-comment').on('click', function() {
+    let url= $(this).data('url')
+    $.ajax({
+        type: 'POST',
+        url: url,
+        headers: {'X-CSRFToken': '{{csrf_token}}'},
+        success: (response) => {
+            location.reload()
+        },
+        error: function(error) {
+            console.log('error')
+        }
+    });
+})
+</script>
 {% endblock %}

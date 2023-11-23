@@ -5,6 +5,9 @@ from .models import Post, Hero, Recipes, RecipeDetail
 from .forms import CommentForm, ContactForm
 from django.core.mail import EmailMessage
 from django.conf import settings
+from django.http import JsonResponse
+from django.views.generic import DeleteView
+from django.apps import apps
 
 class HomeView(View):
     template_name = "index.html"
@@ -158,3 +161,60 @@ class RecipeDetailView(View):
             self.template_name,
             context
         )
+
+class GenericObjectDeleteView(DeleteView):
+    """
+    View class for deleting a generic object based on the URL parameters.
+    """
+    def get_object(self, queryset=None):
+        """
+        Retrieve the object to be deleted based on the URL parameters.
+        Args:
+            queryset: The queryset to use for retrieving the object.
+        Returns:
+            Model: The object to be deleted.
+        """
+        try:
+            # Get the model class based on the URL parameter
+            model_name = self.kwargs['model']
+            model = apps.get_model(app_label='blog', model_name=model_name)
+            # Get the object to be deleted
+            obj_pk = self.kwargs['pk']
+            obj = get_object_or_404(model, pk=obj_pk)
+            return obj
+        except (LookupError, ValueError, KeyError) as e:
+            # Handle lookup errors, value errors, or key errors
+            return JsonResponse({'status': 'error',
+                                 'message': f'Error retrieving object: {str(e)}'})
+    def delete(self, request, *args, **kwargs):
+        # NOTE: request, *args, **kwargs are not used in this function
+        # but django needs them
+        """
+        Handle DELETE requests to delete an object.
+        Args:
+            request (HttpRequest): The HTTP request object.
+            args: Additional positional arguments.
+            kwargs: Additional keyword arguments.
+        Returns:
+            JsonResponse: JSON response indicating the status of the operation.
+        """
+        try:
+            # Get the object to be deleted
+            obj = self.get_object()
+            model_name = obj.__class__.__name__
+            # Delete the object
+            obj.delete()
+            # Override the delete method to return a JSON response
+            return JsonResponse({'status': 'success', 'message': f'{model_name[:-6]} deleted'})
+        except Exception as e:
+            # Handle other exceptions
+            return JsonResponse({'status': 'error', 'message': f'Error deleting object: {str(e)}'})
+    def get_context_data(self, **kwargs):
+        """
+        Get the context data for rendering the template.
+        Returns:
+            dict: A dictionary containing context data.
+        """
+        context = super().get_context_data(**kwargs)
+        context['model_name'] = self.kwargs['model']
+        return context
