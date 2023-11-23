@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ["https://nutrition2023-ea03d13919e5.herokuapp.com" , "127.0.0.1"]
+ALLOWED_HOSTS = ["nutrition2023-ea03d13919e5.herokuapp.com" , "127.0.0.1"]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
