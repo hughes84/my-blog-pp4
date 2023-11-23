@@ -184,7 +184,9 @@ main {
     line-height: 40px;
     border: 1px solid black;
     margin-top: 15px;
-    background-color:rgba(245, 91, 13, 0.507)
+    width: fit-content;
+    background-color:rgba(245, 91, 13, 0.507);
+
 }
 
 a.nav-link {
@@ -195,6 +197,7 @@ a.nav-link {
     cursor: pointer;
     position: relative;
     color: #404040;
+    width: fit-content;
 }
 
 .dropdown-menu {
