@@ -19,7 +19,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    fetaured_image = CloudinaryField('image', default='place_holder')
+    featured_image = CloudinaryField('image', default='place_holder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -49,7 +49,7 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-class Recipes(models.Model):
+class Recipe(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     preparation_time = models.PositiveIntegerField()
@@ -59,7 +59,7 @@ class Recipes(models.Model):
 
 
 class RecipeDetail(models.Model):
-    recipe = models.OneToOneField(Recipes, on_delete=models.CASCADE, related_name='details')
+    recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, related_name='details')
     ingredients = models.TextField()
     instructions = models.TextField()
     notes = models.TextField()
