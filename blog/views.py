@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post, Hero, Recipes, RecipeDetail
+from .models import Post, Hero, Recipe, RecipeDetail
 from .forms import CommentForm, ContactForm
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -140,7 +140,7 @@ class RecipesView(View):
     template_name = 'recipes.html'
 
     def get(self, request, *args, **kwargs):
-        recipes = Recipes.objects.all()
+        recipes = Recipe.objects.all()
         context = {'recipes': recipes}
         return render(
             request,
@@ -153,7 +153,7 @@ class RecipeDetailView(View):
     template_name = 'recipedetail.html'
 
     def get(self, request, recipe_id, *args, **kwargs):
-        recipe = get_object_or_404(Recipes, id=recipe_id)
+        recipe = get_object_or_404(Recipe, id=recipe_id)
         recipedetail = RecipeDetail.objects.filter(recipe=recipe)
         context = {'recipedetail': recipedetail[0]}
         return render(

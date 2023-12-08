@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Hero, RecipeDetail, Recipes
+from .models import Post, Comment, Hero, RecipeDetail, Recipe
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -27,7 +27,7 @@ class RecipeDetailInline(admin.TabularInline):  # You can use admin.TabularInlin
     model = RecipeDetail
     extra = 1  # Number of empty forms to display
 
-@admin.register(Recipes)
+@admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
     inlines = [RecipeDetailInline]
 
