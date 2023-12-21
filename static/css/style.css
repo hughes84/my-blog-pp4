@@ -67,12 +67,8 @@ body {
 
 .masthead {
     margin-top: 10px;
-    
-}
-
-.masthead img {
+    overflow: hidden;
     height: 200px;
-    background-size: contain;
     width: 100%;
 }
 
@@ -142,6 +138,7 @@ a.navbar-brand {
     font-family: cursive;
     font-weight: 700;
     z-index: 1000;
+    list-style-type: none;
 
 }
 
@@ -156,7 +153,7 @@ nav.main-navigation {
 
 nav.main-navigation ul.nav-list {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     list-style: none;
     position: relative;
     text-align: right;
@@ -200,12 +197,15 @@ nav.main-navigation ul.nav-list {
 }
 
 .nav-list li.nav-list-item {
-    display: inline-block;
-    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 20px;
     border: 1px solid black;
-    margin-top: 15px;
-    width: fit-content;
+    margin: 15px 5px 0 5px;
+    width: 100%;
     background-color:rgba(245, 91, 13, 0.507);
+    text-align: center;
 
 }
 
@@ -218,7 +218,10 @@ a.nav-link {
     position: relative;
     color: #404040;
     width: fit-content;
+    list-style-type: none;
+    
 }
+
 
 .dropdown-menu {
     z-index: 100;
@@ -338,6 +341,18 @@ a.nav-link {
 
 .card-container {
     width: 100%;
+    padding: 0 0 100px 0;
+}
+
+.card-container .card a {
+    margin-top: 100px;
+}
+
+.card-container img {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
 }
 
 .inner-card-container {
@@ -347,7 +362,7 @@ a.nav-link {
     flex-direction: row;
     gap: 1.5%; 
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 20px 0 100px 0;
 }
 
 .comments-container {
@@ -436,4 +451,19 @@ form p {
     font-size: 12px;
     padding: 3px;
     z-index: 1;
+}
+
+@media (max-width: 750px) {
+    .inner-card-container{
+        width: 90%;
+        flex-direction: column;
+        gap: 0.5%; 
+        margin: 0 auto;
+        padding: 0 0;
+    }
+
+    .card{
+        width: 100%;
+    }
+
 }
