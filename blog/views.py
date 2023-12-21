@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post, Hero, Recipe, RecipeDetail
-from .forms import CommentForm, ContactForm
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.generic import DeleteView
 from django.apps import apps
+from .models import Post, Hero, Recipe, RecipeDetail
+from .forms import CommentForm, ContactForm
+
+# pylint: disable=no-member
+
 
 class HomeView(View):
     template_name = "index.html"
