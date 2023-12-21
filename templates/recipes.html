@@ -1,21 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    
+
+<!-- Recipe Card Section -->
 <div class="card-container">
     <div class="inner-card-container">
-    {% for recipe in recipes %}    
-        <div class="card mb">
-            <img class="card-img-top" src="{{recipe.recipeimage.url}}" alt="Card image cap">
-            <div class="card-body mb">
-            <h5 class="card-title">{{ recipe.title }}</h5>
-            <p class="card-text">{{ recipe.description }}</p>
-            <a type="button" class="btn btn-primary mb" href="{% url 'recipedetail' recipe.id %}">Recipe</a>
+        {% for recipe in recipes %}
+            <!-- Recipe Card -->
+            <div class="card mb">
+                <!-- Recipe Image -->
+                <img class="card-img-top" src="{{ recipe.recipeimage.url }}" alt="Card image cap">
+                <div class="card-body mb">
+                    <!-- Recipe Title -->
+                    <h5 class="card-title">{{ recipe.title }}</h5>
+                    <!-- Recipe Description -->
+                    <p class="card-text">{{ recipe.description }}</p>
+                    <!-- Link to Recipe Detail Page -->
+                    <a type="button" class="btn btn-primary mb" href="{% url 'recipedetail' recipe.id %}">Recipe</a>
+                </div>
             </div>
-        </div>            
-    {% endfor %}
+            <!-- End Recipe Card -->
+        {% endfor %}
     </div>
 </div>
-
+<!-- End Recipe Card Section -->
 
 {% endblock %}

@@ -1,5 +1,6 @@
-from . import views
 from django.urls import path
+from . import views
+
 
 
 urlpatterns = [
@@ -12,6 +13,6 @@ urlpatterns = [
     path('recipes', views.RecipesView.as_view(), name='recipes'),
     path('recipedetail/<int:recipe_id>/', views.RecipeDetailView.as_view(), name='recipedetail'),
     path('delete/<str:model>/<int:pk>/',
-          views.GenericObjectDeleteView.as_view(), name='delete_object'),
+        views.GenericObjectDeleteView.as_view(), name='delete_object'),
 
 ]

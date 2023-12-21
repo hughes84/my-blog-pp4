@@ -4,21 +4,29 @@
 <html class="h-100">
 
 <head>
-    
-
+    <!-- Meta tags for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- External CSS stylesheets -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+    <!-- JavaScript libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a43a70dddd.js" crossorigin="anonymous"></script>
+
+    <!-- Page Title -->
     <title>Nutrition Blog</title>
 </head>
 
@@ -28,16 +36,20 @@
 
     <nav class="main-navigation">
 
+        <!-- Mobile navigation icon -->
         <div class="d-flex d-sm-flex d-lg-none list-inline-item dropdown my-auto mr-2">
+            <!-- Hamburger icon -->
             <a aria-label="menu icon link" class="text-black m-2" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="settings-cog ">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </a>
-                <a class="navbar-brand mx-auto" href="{% url 'home' %}">Nutrition 2023</a>     
-            <!-- settings drop down -->
+            <!-- Brand name -->
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">Nutrition 2023</a>
+            <!-- Settings drop-down -->
             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="user-options">
+                <!-- Navigation links -->
                 <li class="nav-list-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
@@ -53,6 +65,7 @@
                 <li class="nav-list-item">
                     <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                 </li>
+                <!-- User account links -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
@@ -62,14 +75,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                 </li>
-                </div>
             </div>
         </div>
-        
-        <ul class="nav-list d-none d-sm-none d-lg-flex">
+
+        <!-- Large screen navigation -->
+        <ul class="nav-list h-50 d-none d-sm-flex d-lg-flex">
+            <!-- Brand name -->
             <li class="navbar-header">
                 <a class="navbar-brand" href="{% url 'home' %}">Nutrition 2023</a>
             </li>
+            <!-- Navigation links -->
             <li class="nav-list-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
@@ -85,12 +100,14 @@
             <li class="nav-list-item">
                 <a href="{% url 'contact' %}" class="nav-link">Contact</a>
             </li>
+            <!-- User account dropdown -->
             <li class="nav-list-item">
                 <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Account
                 </a>
-                <!-- settings drop down -->
+                <!-- Account dropdown menu -->
                 <div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="user-options">
+                    <!-- Conditional display of login/logout links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -118,26 +135,5 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-2 dark-bg">                  
-        <p class="m-0 text-center text-white">Copyright of @hug_hes84 
-            <br>Follow us: 
-        <a href="https://instagram.com" target="_blank" rel="noopener"
-                aria-label="Visit GitHub page (opens in a new tab)"><i
-                    class="fab fa-instagram"></i></a>
-
-            <a href="https://facebook.com" target="_blank" rel="noopener"
-                aria-label="linkedin (opens in a new tab)"><i class="fab fa-brands fa-facebook"></i></a>
-
-            <a href="https://twitter.com" rel="noopener" target="_blank"
-                aria-label="slack (opens in a new tab)"><i class="fab fa-brands fa-twitter"></i></a></p>
-    </footer>
-    <script>
-        setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 2500);
-    </script>
-</body>
-
-</html>
+    <footer class="footer mt-auto py-2 dark-bg">
+        <p class="m-0 text-center text-white">

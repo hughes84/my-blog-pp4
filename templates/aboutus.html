@@ -1,61 +1,58 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
 
-<!-- About 1 - Bootstrap Brain Component -->
+{% block content %}
+<!-- About Us Section - Bootstrap Brain Component -->
 <section class="mb-10">
     <div class="aboutus-container">
-      <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-        
-        <div class="col-12 col-lg-6 col-xl-7">
-          <div class="row justify-content-xl-center">
-            <div class="col-12 col-xl-11">
-              <h2 class="h1 mb-3">Who Are We?</h2>
-              <p class="lead fs-4 text-secondary mb-3">Dietitian in Tipperary</p>
-              <p class="mb-5">I am a dietitian based in An Port Nua, Co.Tipperary. My speciality areas centre around sports nutrition, weight management and aiding those I work with make more successful & long term changes to their diet. I also work with a wider general range of clients with a variety of issues ranging from simple nutrient deficiencies to diabetes management</p>                                                 
-                      <h4 class="mb-3">What we offer!</h4>
-                      <p class="text-secondary mb-3">
-                        Gut Nutrition<br>
+        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+
+            <!-- Left Column - Introduction -->
+            <div class="col-12 col-lg-6 col-xl-7">
+                <div class="row justify-content-xl-center">
+                    <div class="col-12 col-xl-11">
+                        <h2 class="h1 mb-3">Who Are We?</h2>
+                        <p class="lead fs-4 text-secondary mb-3">Dietitian in Tipperary</p>
+                        <p class="mb-5">I am a dietitian based in An Port Nua, Co.Tipperary. My speciality areas
+                            centre around sports nutrition, weight management, and aiding those I work with make more
+                            successful & long term changes to their diet. I also work with a wider general range of
+                            clients with a variety of issues ranging from simple nutrient deficiencies to diabetes
+                            management</p>
+
+                        <h4 class="mb-3">What we offer!</h4>
+                        <p class="text-secondary mb-3">Gut Nutrition</p>                           
+                        <p class="mb-5">Dietary fibre in foods can improve your gut health as it can help keep us regular, 
+                          reduce the risk of bowel cancer and feed the healthy bacteria in our gut. Wholefoods, such as fruits, 
+                          vegetables, legumes, wholegrains and nuts, may prevent the growth of some bacteria linked to diseases 
+                          and inflammation.</p>
+                            <!-- List of services -->
+                            <!-- ... -->             
                         <br>
-                        With over 20 years experience giving dietary advice to people we love to keep this as our specialist area and are proud to have had loads of happy clients walk away with happier guts.
-                        Pancreatitis
-                        Liver problems including fatty liver
-                        Troublesome stoma output
-                        Post gastrointestinal surgery
-                        Fibromyalgia
-                        Ulcerative Colitis
-                        Irritable bowel syndrome (IBS)
-                        Gastritis/Ulcers
-                        Diverticular Disease
-                        Constipation / Diarrhoea
-                        Coeliac Disease
-                        Crohns Disease
-                      </p>
-                      <br>
-                      <br>
+                        <br>
                     </div>
+                    <!-- Image of the dietitian -->
                     <img src="{% static 'dietitian.png' %}">
-                  </div>
-                </div>                 
                 </div>
-                <div class="col-12 col-md-6">
-                  <div class="d-flex">
-                    <div class="me-5 text-primary">                     
+            </div>
+
+            <!-- Right Column - Services Offered -->
+            <div class="col-12 col-md-6">
+                <div class="d-flex">
+                    <div class="me-5 text-primary">
+                        <!-- Any additional content for the right column -->
                     </div>
                     <div>
-                      <h4 class="mb-3 my-4">What we deliver!</h4>
-                      <p class="lead fs-4 text-secondary mb-3">Honesty and professionalism</p>
-                      <p class="text-secondary">When considering whether seeing a nutritionist is worth your time and money, keep in mind the long-term benefits. Many people would agree that improvements in your energy, mood, and overall health are definitely worth it. This may even mean fewer health complications and fewer medications to pay for in the future</p>
+                        <h4 class="mb-3 my-4">What we deliver!</h4>
+                        <p class="lead fs-4 text-secondary mb-3">Honesty and professionalism</p>
+                        <p class="text-secondary">When considering whether seeing a nutritionist is worth your time and
+                            money, keep in mind the long-term benefits. Many people would agree that improvements in
+                            your energy, mood, and overall health are definitely worth it. This may even mean fewer
+                            health complications and fewer medications to pay for in the future</p>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+
         </div>
-      </div>
     </div>
-  </section>
-
-
+</section>
 {% endblock %}

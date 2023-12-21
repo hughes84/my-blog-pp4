@@ -5,36 +5,49 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="w-100 h-100">
-			<h3 class="text-center text-primary">
-				{{ recipedetail.recipe.title }}
-            </h3>
-			<div class="containers">
-				
-            <img src="{{recipedetail.recipe.recipeimage.url}}">
-			<table class="table table-bordered table-striped table-hover table-condensed table-responsive">
-        	<thead>
-        		<tr>
-        			<th>
-        				Ingredients
-        			</th>
-        			<th>
-        				Method
-        			</th>
-        			<th>
-        				
-        			</th>
-        		</tr>
-        	</thead>
-        	<tbody>
-        			<td>
-        				{{recipedetail.ingredients}}
-        			</td>
+    <!-- Displaying the title of the recipe -->
+    <h3 class="text-center text-primary">
+        {{ recipedetail.recipe.title }}
+    </h3>
+    <div class="containers">
+        <!-- Displaying the image of the recipe -->
+        <img src="{{recipedetail.recipe.recipeimage.url}}">
+        <!-- Table to present Ingredients and Method -->
+        <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+            <thead>
+                <tr>
+                    <!-- Table header for Ingredients -->
+                    <th>
+                        Ingredients
+                    </th>
+                    <!-- Table header for Method -->
+                    <th>
+                        Method
+                    </th>
+                    <!-- An empty header cell -->
+                    <th>
+                        
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- Displaying the Ingredients for the recipe -->
                     <td>
-        				{{recipedetail.instructions}}
-        			</td>
+                        {{recipedetail.ingredients}}
+                    </td>
+                    <!-- Displaying the Method/Instructions for the recipe -->
+                    <td>
+                        {{recipedetail.instructions}}
+                    </td>
+                    <!-- An empty cell in the same row -->
+                    <td>
+                        
+                    </td>
+                </tr>
             </tbody>
-            </table>
-		</div>
-	</div>
-{% endblock %}
+        </table>
+    </div>
+</div>
 
+{% endblock %}

@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.core.mail import EmailMessage
 from django.conf import settings
-from django.http import JsonResponse
 from django.views.generic import DeleteView
 from django.apps import apps
 from .models import Post, Hero, Recipe, RecipeDetail
@@ -11,19 +10,18 @@ from .forms import CommentForm, ContactForm
 
 # pylint: disable=no-member
 
-
 class HomeView(View):
+    """View for rendering the home page."""
     template_name = "index.html"
+
     def get(self, request, *args, **kwargs):
+        """Handle GET request and render the home page."""
         hero_instance = Hero.objects.first()
-        return render(
-            request,
-            self.template_name,
-            {'hero': hero_instance}
-        )
+        return render(request, self.template_name, {'hero': hero_instance})
 
 
 class PostList(generic.ListView):
+    """View for displaying a list of published posts."""
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blogs.html"
@@ -31,8 +29,9 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """View for displaying details of a specific post and handling comments."""
     def get(self, request, slug, *args, **kwargs):
+        """Handle GET request and render post details."""
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -40,20 +39,16 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
+        return render(request, "post_detail.html", {
+            "post": post,
+            "comments": comments,
+            "commented": False,
+            "liked": liked,
+            "comment_form": CommentForm()
+        })
 
     def post(self, request, slug, *args, **kwargs):
-
+        """Handle POST request for adding comments to a post."""
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -79,16 +74,13 @@ class PostDetail(View):
             "liked": liked
         }
 
-        return render(
-            request,
-            "post_detail.html",
-            context,
-        )
+        return render(request, "post_detail.html", context)
 
 
 class PostLike(View):
-
+    """View for handling post likes."""
     def post(self, request, slug, *args, **kwargs):
+        """Handle POST request to toggle post likes."""
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -98,29 +90,24 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 class AboutUs(View):
-
+    """View for rendering the About Us page."""
     template_name = 'aboutus.html'
 
     def get(self, request, *args, **kwargs):
-
-        return render(
-            request,
-            self.template_name,
-        )
+        """Handle GET request and render the About Us page."""
+        return render(request, self.template_name)
 
 class Contact(View):
-
+    """View for rendering the Contact page and handling contact form submissions."""
     template_name = 'contact.html'
 
     def get(self, request, *args, **kwargs):
+        """Handle GET request and render the Contact page."""
         form = ContactForm()
-        return render(
-            request,
-            self.template_name,
-            {'form': form},
-        )
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request):
+        """Handle POST request for processing contact form submissions."""
         form = ContactForm(request.POST)
         if form.is_valid():
             # Process the form data
@@ -139,20 +126,18 @@ class Contact(View):
 
 
 class RecipesView(View):
-
+    """View for rendering the Recipes page."""
     template_name = 'recipes.html'
 
     def get(self, request, *args, **kwargs):
+        """Handle GET request and render the Recipes page."""
         recipes = Recipe.objects.all()
         context = {'recipes': recipes}
-        return render(
-            request,
-            self.template_name,
-            context,
-        )
+        return render(request, self.template_name, context)
+
 
 class RecipeDetailView(View):
-
+    """View for rendering details of a specific recipe."""
     template_name = 'recipedetail.html'
 
     def get(self, request, recipe_id, *args, **kwargs):
