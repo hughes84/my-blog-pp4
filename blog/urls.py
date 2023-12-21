@@ -1,3 +1,9 @@
+"""
+Nutrition Blog - URLS
+----------------
+URLS configuration for Nutrition Blog
+
+"""
 from django.urls import path
 from . import views
 

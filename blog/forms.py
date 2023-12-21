@@ -1,3 +1,9 @@
+"""
+Nutrition Blog - Forms
+----------------
+Forms for Nutrition Blog
+
+"""
 from django import forms
 from .models import Comment
 
@@ -6,7 +12,8 @@ class CommentForm(forms.ModelForm):
     """
     Form class for handling comments.
 
-    This form is based on the Comment model and includes a single field, 'body', for the comment text.
+    This form is based on the Comment model and includes a single field,
+    'body', for the comment text.
 
     Attributes:
         model (class): The Django model associated with this form.
@@ -14,6 +21,9 @@ class CommentForm(forms.ModelForm):
     """
 
     class Meta:
+        """
+        Model to provide metadata to the ModelForm.
+        """
         model = Comment
         fields = ('body',)
 

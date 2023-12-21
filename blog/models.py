@@ -1,3 +1,10 @@
+"""
+Nutrition Blog - Models
+----------------
+Models for Nutrition Blog
+
+"""
+
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -30,7 +37,11 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:
+        """
+        Model to provide metadata to the ModelForm.
+        """
         ordering = ['-created_on']
+
 
     def number_of_likes(self):
         """
@@ -50,6 +61,9 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        Model to provide metadata to the ModelForm.
+        """
         ordering = ["created_on"]
 
     def __str__(self):

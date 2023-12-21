@@ -1,3 +1,8 @@
+"""
+Nutrition Blog - Apps
+----------------
+App Configuration for Nutrition Blog.
+"""
 from django.apps import AppConfig
 
 class BlogConfig(AppConfig):
