@@ -6,6 +6,7 @@
 <head>
     <!-- Meta tags for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}" >
 
     <!-- External CSS stylesheets -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -135,5 +136,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-2 dark-bg">
-        <p class="m-0 text-center text-white">
+    <footer class="footer mt-auto py-2 dark-bg">                  
+        <p class="m-0 text-center text-white">Copyright of @hug_hes84 
+            <br>Follow us: 
+        <a href="https://instagram.com" target="_blank" rel="noopener"
+                aria-label="Visit GitHub page (opens in a new tab)"><i
+                    class="fab fa-instagram"></i></a>
+
+            <a href="https://facebook.com" target="_blank" rel="noopener"
+                aria-label="linkedin (opens in a new tab)"><i class="fab fa-brands fa-facebook"></i></a>
+
+            <a href="https://twitter.com" rel="noopener" target="_blank"
+                aria-label="slack (opens in a new tab)"><i class="fab fa-brands fa-twitter"></i></a></p>
+    </footer>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
+</body>
+
+</html>
