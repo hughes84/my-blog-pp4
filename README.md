@@ -31,13 +31,13 @@ This website was created using the Five Planes Of Website Design:<br>
 |                                       |4B| As a user, I want to be able to access ingredients and methods|
 |                                       |4C| As a logged-in user, I want to be able to mark my favourite recipe|
 |**ADMINISTRATION**                     |  ||
-|                                       |6A| As a logged-in admin member, I want to be able to access the admin page|
-|                                       |6B| s a logged-in admin member, I want to be able to authenticate and authorise comments and posts|
-|                                       |6C| As a logged-in staff member, I want to be able to cancel bookings|
+|                                       |5A| As a logged-in admin member, I want to be able to access the admin page|
+|                                       |5B| s a logged-in admin member, I want to be able to authenticate and authorise comments and posts|
+|                                       |5C| As a logged-in staff member, I want to be able to cancel bookings|
 |**CONTACT**                            |  ||
-|                                       |8A| As a user, I want to be able to contact the site with ease|
-|                                       |8B| As a user, I want to get a reply that my messgae has been received|
-|                                       |8C| As a user, I want to see contact information on the website|
+|                                       |6A| As a user, I want to be able to contact the site with ease|
+|                                       |6B| As a user, I want to get a reply that my messgae has been received|
+|                                       |6C| As a user, I want to see contact information on the website|
 
 **Project Goal:**<br>
 To create a blog for those with an interest in nutrition, seeking guidance, information tips or discuss their own experiences and ideas with others and staff members as well.
