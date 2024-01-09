@@ -1,39 +1,51 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Nurtition 2023 - Nutrition Blog
 
-Welcome,
+"mock-up"
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## Overview
+This is a project designed and developed to create a friendly atmosphere for those looking to talk nutrition, providing clients with professional, evidence-based nutrition support that they can implement easily, to make long term sustainable changes. It allows the user to learn from professionals as well as gain ideas, tips and support from other users. There is a recipes section where the user can learn how to make simple, quick and healthy snacks and meals with simple ingredients and step by step methods.<br>
+**** Nurtition 2023 - Nutrition Blog was developed using Python (Django), HTML, CSS and JavaScript by storing the data in a PostgreSQL database.
+<br><br>
+The fully deployed project can be accessed at [this link](https://nutrition2023-ea03d13919e5.herokuapp.com/).<br><br>
 
-## Codeanywhere Reminders
+# UX
+This website was created using the Five Planes Of Website Design:<br>
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+|   EPIC                                |                                User Story                                                   |
+| :-------------------------------------|--:------------------------------------------------------------------------------------------- |
+|**CONTENT AND NAVIGATION**             |
+|                                       | As a user, I want to see a menu so I can easily navigate through the website content |             
+|                                       | As a user, I want to know what the website is about without having to do too much reading|
+|                                       | As a user, I want the website to have a nice and intuitive design that will match the blogs theme|
+|**USER REGISTRATION**                  |
+|                                       | As a user, I want to be able to register on the website|
+|                                       | As a user, I want to be able to authenticate using only email and password|
+|                                       | As a user, I want to be able to log out at any time|
+|**BLOGS**                            |
+|                                       | As a logged-in user, I want to be able to see relevant blogs clearly|
+|                                       | As a logged-in user, I want to be able to select a blog and comment and/or like selected blog|
+|**RECIPES**                               |
+|                                       | As a user, I want to see the recipes individual overview clearly|
+|                                       | As a user, I want to be able to access ingredients and methods|
+|                                       | As a logged-in user, I want to be able to mark my favourite recipe|
+|**ADMINISTRATION**              |
+|                                       | As a logged-in admin member, I want to be able to access the admin page|
+|                                       | As a logged-in admin member, I want to be able to authenticate and authorise comments and posts|
+|                                       | As a logged-in staff member, I want to be able to reject comments and posts|
+|                                       | As a logged-in staff member, I want to be able to change my password|                                  
+|**CONTACT**                            |
+|                                       | As a user, I want to be able to contact the site with ease|
+|                                       | As a user, I want to get a reply that my messgae has been received|
+|                                       | As a user, I want to see contact information on the website|
 
-`python3 -m http.server`
+**Project Goal:**<br>
+To create a blog for those with an interest in nutrition, seeking guidance, information tips or discuss their own experiences and ideas with others and staff members as well.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+**Project Objectives:**<br> 
+* To create a website with a simple and intuitive User Experience;
+* To add content that is relevant to the topic and helps create a better understanding;
+* To be able to differentiate between client and staff member accounts;
+* To implement fully functional features that will ease the staff members' tasks and upgrade clients' experience with the blog features;
+* To make the website responsive and functional on different devices.<br><br>
