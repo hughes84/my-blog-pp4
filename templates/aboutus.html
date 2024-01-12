@@ -2,57 +2,74 @@
 {% load static %}
 
 {% block content %}
+<section class="about-us py-5 px-2 " id="about-us">
+    <div class="container-fluid mt-5">
+	<div class="row">
+		<div class="col-md-6">
+		    <h1 class='text-success'>Who Are We?</h1>
+		    <h2>Dietitian in Tipperary</h2>
+		    <hr>
+		    <p>I am a dietitian based in An Port Nua, Co.Tipperary. My speciality areas centre
+                around sports nutrition, weight management, and aiding those I work with make more
+                successful & long term changes to their diet.<br>
+                I also work with a wider general range ofclients with a variety of issues ranging from 
+                simple nutrient deficiencies to diabetes management. I offer advice on food and nutrition 
+                to help people improve their health and wellbeing.<br>
+                I help people make informed decisions about their dietary intake and develop customised
+                nutrition plans to meet a person's individual health needs and lifestyle.</p>
+		    <button id="know-more" type="button" class="btn btn-success">Let's Know More</button>
+		</div>
+		<div class="col-md-5">
+		    <img src="{% static 'dietitian.png' %}" alt="">
+		</div>
+	</div>
+</div>
+</section>
 <!-- About Us Section - Bootstrap Brain Component -->
-<section class="mb-10">
+<section id="toggle-section" class="mb-10 d-none">
     <div class="aboutus-container">
         <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
 
             <!-- Left Column - Introduction -->
             <div class="col-12">
-                <div class="row justify-content-xl-center">
-                    <div class="col-12 col-xl-11">
-                        <h2 class="h1 mb-3">Who Are We?</h2>
-                        <p class="lead fs-4 text-secondary mb-3">Dietitian in Tipperary</p>
-                        <p class="mb-5">I am a dietitian based in An Port Nua, Co.Tipperary. My speciality areas
-                            centre around sports nutrition, weight management, and aiding those I work with make more
-                            successful & long term changes to their diet. I also work with a wider general range of
-                            clients with a variety of issues ranging from simple nutrient deficiencies to diabetes
-                            management</p>
-
-                        <h4 class="mb-3">What we offer!</h4>
-                        <p class="text-secondary mb-3">Gut Nutrition</p>                           
-                        <p class="mb-5">Dietary fibre in foods can improve your gut health as it can help keep us regular, 
-                          reduce the risk of bowel cancer and feed the healthy bacteria in our gut. Wholefoods, such as fruits, 
-                          vegetables, legumes, wholegrains and nuts, may prevent the growth of some bacteria linked to diseases 
-                          and inflammation.</p>
-                            <!-- List of services -->
-                            <!-- ... -->             
-                        <br>
-                        <br>
-                    </div>
-                    <!-- Image of the dietitian -->
-                    <img src="{% static 'dietitian.png' %}">
-                </div>
+                <h2 class="mb-3">What we offer!</h2>
+                <p class="lead fs-4 text-secondary mb-3">Gut Nutrition</p>
+                <p class="mb-5">If you notice signs of poor gut health, lifestyle factors may help improve your
+                    gut microbiome and benefit your overall health. Dietary fibre in foods can improve your gut 
+                    health as it can help keep us regular, reduce the risk of bowel cancer and feed the healthy 
+                    bacteria in our gut. Wholefoods, such as fruits, vegetables, legumes, wholegrains and nuts,
+                    may prevent the growth of some bacteria linked to diseases and inflammation. The term “gut 
+                    microbiome” refers to the microorganisms living in your intestines. Each person has about 
+                    200 different species of bacteria, viruses, and fungi in their digestive tract. Some
+                    microorganisms are harmful to our health, but many are incredibly beneficial and even
+                    necessary for a healthy body. Source indicates that having a large variety of bacteria in 
+                    the gut may help reduce the risk of conditions like diabetes, inflammatory bowel disease,
+                    and psoriatic arthritis.</p>                     
             </div>
-
             <!-- Right Column - Services Offered -->
             <div class="col-12">
-                <div class="d-flex">
-                    <div class="me-5 text-primary">
-                        <!-- Any additional content for the right column -->
-                    </div>
-                    <div>
-                        <h4 class="mb-3 my-4">What we deliver!</h4>
-                        <p class="lead fs-4 text-secondary mb-3">Honesty and professionalism</p>
-                        <p class="text-secondary">When considering whether seeing a nutritionist is worth your time and
-                            money, keep in mind the long-term benefits. Many people would agree that improvements in
-                            your energy, mood, and overall health are definitely worth it. This may even mean fewer
-                            health complications and fewer medications to pay for in the future</p>
-                    </div>
-                </div>
+                <h2 class="mb-3">What we deliver!</h2>
+                <p class="lead fs-4 text-secondary mb-3">Honesty and professionalism</p>
+                <p class="mb-5">When considering whether seeing a nutritionist is worth your time and
+                    money, keep in mind the long-term benefits. Many people would agree that improvements in
+                    your energy, mood, and overall health are definitely worth it. This may even mean fewer
+                    health complications and fewer medications to pay for in the future. We will help you 
+                    find substitutions to keep your diet nutritious and above all enjoyable. We offer 
+                    accurate, practical advice to improve the way you eat and feel. Nutrition can be confusing, 
+                    especially with the amount of nutrition advice and information that surrounds all of us.</p>
             </div>
-
         </div>
     </div>
 </section>
+<script>
+    $("#know-more").on("click", function(){
+        if($(this).text()==="Let's Know More"){
+            $(this).text("View Less")
+            $("#toggle-section").removeClass("d-none")
+        }else{
+            $(this).text("Let's Know More")
+            $("#toggle-section").addClass("d-none")
+        }
+    })
+</script>
 {% endblock %}
