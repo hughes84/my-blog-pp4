@@ -4,21 +4,21 @@
 
 <!-- Hero Section -->
 <div class="homepage-container">
-    <div class="jumbotron jumbotron-fluid text-center text-white bg-dark" style="background-image: url('{{ hero.image.url }}'); background-size: cover;">
-        <div class="hero-overlay">
-            <!-- Hero Overlay Header -->
-            <div class="overlay-header">
-                <h1 class="display-4">{{ hero.title }}</h1>
-                <p class="lead">{{ hero.subtitle }}</p>
-            </div>
+    <div class="jumbotron jumbotron-fluid text-center bg-dark"
+        style="background-image: url('{{ hero.image.url }}'); background-size: cover;">
 
-            <!-- Hero Overlay Body -->
-            <div class="overlay-body">  
-                <p class="display-4">{{ hero.content_header }}</p>
-                <p class="lead">{{ hero.content }}</p>
+        <div class="row mx-0">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-body bg-black">
+                        <h5 class="card-title text-black">{{ hero.title }}</h5>
+                        <hr>
+                        <p class="card-text">{{ hero.content }}</p>
+                        <a href="{% url 'posts' %}" class="btn btn-primary">Blogs</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-{% endblock %}
+        {% endblock %}
