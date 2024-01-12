@@ -90,3 +90,16 @@ class RecipeDetail(models.Model):
 
     def __str__(self):
         return f"{self.recipe.title} - Details"
+
+
+class Profile(models.Model):
+    """
+    Model representing a profile for the blog.
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    image = CloudinaryField('image')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
+    
