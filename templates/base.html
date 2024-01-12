@@ -32,129 +32,28 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-
-    <!-- Navigation -->
-
-    <nav class="main-navigation">
-
-        <!-- Mobile navigation icon -->
-        <div class="d-flex d-sm-flex d-lg-none list-inline-item dropdown my-auto mr-2">
-            <!-- Hamburger icon -->
-            <a aria-label="menu icon link" class="text-black m-2" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <div class="settings-cog ">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </a>
-            <!-- Brand name -->
-            <a class="navbar-brand mx-auto" href="{% url 'home' %}">Nutrition 2023</a>
-            <!-- Settings drop-down -->
-            <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="user-options">
-                <!-- Navigation links -->
-                <li class="nav-list-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-list-item">
-                    <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-list-item">
-                    <a href="{% url 'posts' %}" class="nav-link">Blogs</a>
-                </li>
-                <li class="nav-list-item">
-                    <a href="{% url 'recipes' %}" class="nav-link">Recipes</a>
-                </li>
-                <li class="nav-list-item">
-                    <a href="{% url 'contact' %}" class="nav-link">Contact</a>
-                </li>
-                <!-- User account links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                </li>
-            </div>
-        </div>
-
-        <!-- Large screen navigation -->
-        <ul class="nav-list h-50 d-none d-sm-flex d-lg-flex">
-            <!-- Brand name -->
-            <li class="navbar-header">
-                <a class="navbar-brand" href="{% url 'home' %}">Nutrition 2023</a>
-            </li>
-            <!-- Navigation links -->
-            <li class="nav-list-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-list-item">
-                <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
-            </li>
-            <li class="nav-list-item">
-                <a href="{% url 'posts' %}" class="nav-link">Blogs</a>
-            </li>
-            <li class="nav-list-item">
-                <a href="{% url 'recipes' %}" class="nav-link">Recipes</a>
-            </li>
-            <li class="nav-list-item">
-                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
-            </li>
-            <!-- User account dropdown -->
-            <li class="nav-list-item">
-                <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
-                </a>
-                <!-- Account dropdown menu -->
-                <div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="user-options">
-                    <!-- Conditional display of login/logout links -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-    </nav>
+{% include 'includes/header.html' %}
 
     <main class="main-bg">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
-
-    <!-- Footer -->
-    <footer class="footer mt-auto py-2 dark-bg">                  
-        <p class="m-0 text-center text-white">Copyright of @hug_hes84 
-            <br>Follow us: 
-        <a href="https://instagram.com" target="_blank" rel="noopener"
-                aria-label="Visit GitHub page (opens in a new tab)"><i
-                    class="fab fa-instagram"></i></a>
-
-            <a href="https://facebook.com" target="_blank" rel="noopener"
-                aria-label="linkedin (opens in a new tab)"><i class="fab fa-brands fa-facebook"></i></a>
-
-            <a href="https://twitter.com" rel="noopener" target="_blank"
-                aria-label="slack (opens in a new tab)"><i class="fab fa-brands fa-twitter"></i></a></p>
-    </footer>
+    {% include 'includes/footer.html' %}
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 2500);
+        // Dynamically adjust the top margin of the main section based on the header's height
+        $(document).ready(function() {
+            adjustMainSectionMargin();
+        });
+        function adjustMainSectionMargin() {
+            var headerHeight = $('.header-nav').outerHeight();
+            $('main').css('margin-top', headerHeight + 'px');
+        }
     </script>
 </body>
 
