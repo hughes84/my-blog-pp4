@@ -223,7 +223,7 @@ class ProfileView(View):
 
 
     def get(self, request, *args, **kwargs):
-        
+
         profile = get_object_or_404(Profile, user=request.user)
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=profile)

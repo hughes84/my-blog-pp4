@@ -1,5 +1,9 @@
 /* Global Styles */
-
+#messages {
+    top: 100px;
+    left: 25%;
+    width: 50%;
+}
 
 /* Body Styles */
 body {

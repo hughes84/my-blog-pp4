@@ -74,7 +74,30 @@
                             {{ comment.created_on }}
                         </span> wrote:
                         {% if comment.name == user.username %}
-                    <button class="delete-comment btn-info btn float-right delete-comment-icon" data-url="{% url 'delete_object' model='Comment' pk=comment.id %}">x</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            x
+                          </button>
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure you want to delete comment?</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  {{ comment }}
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button class="delete-comment btn-info btn float-right delete-comment-icon" 
+                                    data-url="{% url 'delete_object' model='Comment' pk=comment.id %}">Delete</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    
                     {% endif %}
                     </p>
                     
@@ -110,6 +133,7 @@
         {% endif %}
     </div>
 </div>
+
 <script>
     $('.delete-comment').on('click', function() {
     let url= $(this).data('url')
