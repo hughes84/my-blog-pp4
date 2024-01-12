@@ -5,15 +5,18 @@ Views for Nutrition Blog
 
 """
 
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect, JsonResponse
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import DeleteView
 from django.apps import apps
-from .models import Post, Hero, Recipe, RecipeDetail
-from .forms import CommentForm, ContactForm
+from .models import Post, Hero, Recipe, RecipeDetail, Profile
+from .forms import CommentForm, ContactForm, UserUpdateForm, ProfileUpdateForm
+from django.contrib import messages
+
 
 # pylint: disable=no-member
 
@@ -213,3 +216,39 @@ class GenericObjectDeleteView(DeleteView):
         context = super().get_context_data(**kwargs)
         context['model_name'] = self.kwargs['model']
         return context
+
+class ProfileView(View):
+
+    template_name = 'user_profile.html'
+
+
+    def get(self, request, *args, **kwargs):
+        
+        profile = get_object_or_404(Profile, user=request.user)
+        user_form = UserUpdateForm(instance=request.user)
+        profile_form = ProfileUpdateForm(instance=profile)
+
+        context = {
+            'user_form': user_form,
+            'profile_form': profile_form,
+        }
+        return render(request, self.template_name, context)
+
+
+    def post(self, request, *args, **kwargs):
+
+        """
+        Handle POST request for processing contact form submissions.
+        """
+        
+        if request.method == 'POST':
+            profile = get_object_or_404(Profile, user=request.user)
+            user_form = UserUpdateForm(request.POST, instance=request.user)
+            profile_form = ProfileUpdateForm(
+            request.POST, request.FILES, instance=profile)
+            if user_form.is_valid() and profile_form.is_valid():
+                user_form.save()
+                profile_form.save()
+                messages.success(request, 'Your account has been updated!')
+                return redirect('profile')
+        return redirect('profile')
