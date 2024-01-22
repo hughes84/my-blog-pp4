@@ -13,9 +13,10 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import DeleteView
 from django.apps import apps
+from django.contrib import messages
 from .models import Post, Hero, Recipe, RecipeDetail, Profile, Comment
 from .forms import CommentForm, ContactForm, UserUpdateForm, ProfileUpdateForm
-from django.contrib import messages
+
 
 
 # pylint: disable=no-member
@@ -88,6 +89,9 @@ class PostDetail(View):
 
 
 def deleteComment(request, comment_id):
+    """
+    Handle deleting comments.
+    """
     Comment.objects.filter(id=comment_id).delete()
     messages.success(request,'comment deleted')
     return JsonResponse({'status':'success','message':'comment deleted'},status=200)
@@ -223,11 +227,17 @@ class GenericObjectDeleteView(DeleteView):
         return context
 
 class ProfileView(View):
+    """
+    View for displaying and updating user profiles.
+    """
 
     template_name = 'user_profile.html'
 
 
     def get(self, request, *args, **kwargs):
+        """
+        Handle GET requests to display the user profile page.
+        """
 
         profile = get_object_or_404(Profile, user=request.user)
         user_form = UserUpdateForm(instance=request.user)
@@ -243,9 +253,9 @@ class ProfileView(View):
     def post(self, request, *args, **kwargs):
 
         """
-        Handle POST request for processing contact form submissions.
+        Handle POST requests for updating user profiles.
         """
-        
+
         if request.method == 'POST':
             profile = get_object_or_404(Profile, user=request.user)
             user_form = UserUpdateForm(request.POST, instance=request.user)
