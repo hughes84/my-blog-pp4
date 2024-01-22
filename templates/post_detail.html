@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 <div class="masthead">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 p-3 masthead-text">
                 <!-- Post title goes in these h1 tags -->
@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container p-4">
     <div class="row">
         <div class="col-md-12 card mb-4 mt-3">
             <div class="card-body">
@@ -62,10 +62,11 @@
     <div class="row comments-container">
         <div class="col-md-12 card mb-4 mt-3 ">
             <h3 class="mt-4">Comments:</h3>
+            <div class="messages"></div>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
+                <div class="comments {{comment.id}}" style="padding: 10px;">
                     <p class="font-weight-bold position-relative">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.name }}
@@ -91,8 +92,13 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button class="delete-comment btn-info btn float-right delete-comment-icon" 
-                                    data-url="{% url 'delete_object' model='Comment' pk=comment.id %}">Delete</button>
+                                  
+                                  <button data-dismiss="modal" data-comment_id=".{{comment.id}}" class="delete-comment btn-info btn float-right delete-comment-icon" 
+                                    data-url="{% url 'delete' comment_id=comment.id %}">Delete</button>
+                                    
+                                    
+                                
+            
                                 </div>
                               </div>
                             </div>
@@ -135,17 +141,40 @@
 </div>
 
 <script>
-    $('.delete-comment').on('click', function() {
+    $('.delete-comment').on('click', function(e) {
     let url= $(this).data('url')
+    let commentId=$(this).data('comment_id')
     $.ajax({
         type: 'POST',
         url: url,
         headers: {'X-CSRFToken': '{{csrf_token}}'},
         success: (response) => {
-            location.reload()
+            var message = '<div id="messages" class="container mt-3 pull-right">' +
+                '<div class="alert alert-success alert-dismissible" role="alert">' +
+                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                    '</button>' +
+                    response.message +
+                '</div>' +
+              '</div>';
+
+$('.messages').append(message);
+$(commentId).remove()
         },
         error: function(error) {
-            console.log('error')
+            console.log(error)
+            var message = '<div id="messages" class="container mt-3 pull-right">' +
+                '<div class="alert alert-danger alert-dismissible" role="alert">' +
+                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                    '</button>' +
+                    'an error occured deleting comment' +
+                '</div>' +
+              '</div>';
+
+$('.messages').append(message);
+$(commentId).remove()
+
         }
     });
 })

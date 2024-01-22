@@ -223,12 +223,15 @@ nav.main-navigation ul.nav-list {
 .jumbotron {
     height: 100vh;
     padding-bottom: 0 !important;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    
 
 }
 
 /* About Us Container Styles */
 .aboutus-container {
-    padding: 50px 100px 100px 100px;
+    padding: 50px 20px 100px 20px;
     height: fit-content;  
 }
 
@@ -423,6 +426,13 @@ a.nav-link {
 /* Comments Container Styles */
 .comments-container {
     padding-bottom: 100px;
+    position: relative;
+}
+
+.messages {
+    height: fit-content;
+    width: 100%;
+    position: absolute;
 }
 
 /* Container Styles */
@@ -430,10 +440,6 @@ a.nav-link {
     padding: 0 !important;
 }
 
-/* Table Styles */
-table {
-    width: 50% !important;
-}
 
 /* Containers Styles */
 .containers {
@@ -443,6 +449,11 @@ table {
     margin-top: 50px;
     padding-bottom: 100px;
 }
+
+.containers table{
+    width: 50%;  
+}
+
 
 /* Image Styles for Containers */
 .containers img {
@@ -530,6 +541,22 @@ form p {
 
     .card {
         width: 100%;
+    }
+
+    .containers {
+        flex-direction: column;
+        
+    }
+
+    .containers table{
+        flex-direction: column;
+        width: 80%;
+        
+    }
+    
+    
+    .containers img {
+        width: 90%;
     }
 }
 
