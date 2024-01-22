@@ -13,7 +13,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import DeleteView
 from django.apps import apps
-from .models import Post, Hero, Recipe, RecipeDetail, Profile
+from .models import Post, Hero, Recipe, RecipeDetail, Profile, Comment
 from .forms import CommentForm, ContactForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 
@@ -86,6 +86,11 @@ class PostDetail(View):
 
         return render(request, "post_detail.html", context)
 
+
+def deleteComment(request, comment_id):
+    Comment.objects.filter(id=comment_id).delete()
+    messages.success(request,'comment deleted')
+    return JsonResponse({'status':'success','message':'comment deleted'},status=200)
 
 class PostLike(View):
     """View for handling post likes."""

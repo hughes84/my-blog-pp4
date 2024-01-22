@@ -18,8 +18,8 @@ urlpatterns = [
     path('contact/', views.Contact.as_view(), name='contact'),
     path('recipes/', views.RecipesView.as_view(), name='recipes'),
     path('recipedetail/<int:recipe_id>/', views.RecipeDetailView.as_view(), name='recipedetail'),
-    path('delete/<str:model>/<int:pk>/',
-        views.GenericObjectDeleteView.as_view(), name='delete_object'),
+    path('delete/<int:comment_id>/',
+        views.deleteComment, name='delete'),
     path('profile/', views.ProfileView.as_view(), name='profile'),
 
 ]
