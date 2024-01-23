@@ -53,3 +53,18 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 * To implement fully functional features that will ease the staff members' tasks and upgrade clients' experience with the blog features;
 * To make the website responsive and functional on different devices.<br><br>
 
+## Design
+
+#### Colours
+
+* The colour scheme is kept simple by opting mainly for a combination of white text set against the dark backgrounds and black text against the white backgrounds. For the navbar, I selected a bright colour from Bootstrap to highlight the site name as well as encouraging the surrounding colours. The social links and nav bar selections change colour when hovered over to highlight selection. The footer follows suit with this method. Throughout the site the user will see bright, welcoming colours like this when hovering over certain sections as well as colourful buttons on each page.
+
+#### Typography
+
+* The Roboto font is used as the main font for the whole project.
+
+#### Imagery
+
+* All images on the site are related to the recipes, blogs and website design. There are 3 static images throughout the site. The remaining images will be uploaded by the author to the database.
+
+
