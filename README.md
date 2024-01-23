@@ -2,6 +2,12 @@
 
 "mock-up"
 
+![GitHub last commit](https://img.shields.io/github/last-commit/hughes84/my-blog-pp4?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/hughes84/my-blog-pp4?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/hughes84/my-blog-pp4?color=yellow)
+![GitHub top language](https://img.shields.io/github/languages/top/hughes84/my-blog-pp4?color=green)
+<hr>
+
 ## Table of Contents
 
 ## Overview
@@ -67,4 +73,12 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 
 * All images on the site are related to the recipes, blogs and website design. There are 3 static images throughout the site. The remaining images will be uploaded by the author to the database.
 
+### Wireframes
 
+...
+
+## Features
+
+### Home Page
+
+![Home Page]()
