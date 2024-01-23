@@ -12,7 +12,8 @@
 
 ## Overview
 This is a project designed and developed to create a friendly atmosphere for those looking to talk nutrition, providing clients with professional, evidence-based nutrition support that they can implement easily, to make long term sustainable changes. It allows the user to learn from professionals as well as gain ideas, tips and support from other users. There is a recipes section where the user can learn how to make simple, quick and healthy snacks and meals with simple ingredients and step by step methods.<br>
-**** Nurtition 2023 - Nutrition Blog was developed using Python (Django), HTML, CSS and JavaScript by storing the data in a PostgreSQL database.
+
+**Nurtition 2023** - Nutrition Blog was developed using Python (Django), HTML, CSS and JavaScript by storing the data in a PostgreSQL database.
 <br><br>
 The fully deployed project can be accessed at [this link](https://nutrition2023-ea03d13919e5.herokuapp.com/).<br><br>
 
@@ -80,27 +81,27 @@ The wireframes for my site were created with [Balsamiq]() tool and can be viewed
 <details>
   <summary>Wire Frames</summary>
   <h4>Channels list</h4>
-  <img src="docs/read-me-images/wireframe-home.png"><br>
+  <img src="docs/read-me-images/wireframe/home.png"><br>
   <h4>Home page</h4>
-  <img src="docs/read-me-images/wireframe-about.png"><br>
+  <img src="docs/read-me-images/wireframe/about.png"><br>
   <h4>About page</h4>
-  <img src="docs/read-me-images/wireframe-blogs.png"><br>
+  <img src="docs/read-me-images/wireframe/blogs.png"><br>
   <h4>Blogs page</h4>
-  <img src="docs/read-me-images/wireframe-blogcomments.png"><br>
+  <img src="docs/read-me-images/wireframe/blogcomments.png"><br>
   <h4>Blog user comments</h4>
-  <img src="docs/read-me-images/wireframe-recipe.png"><br>
+  <img src="docs/read-me-images/wireframe/recipe.png"><br>
   <h4>Recipes</h4>
-  <img src="docs/read-me-images/wireframe-recipedetail.png"><br>
+  <img src="docs/read-me-images/wireframe/recipedetail.png"><br>
   <h4>Recipe details</h4>
-  <img src="docs/read-me-images/wireframe-contactpage.png"><br>
+  <img src="docs/read-me-images/wireframe/contactpage.png"><br>
   <h4>Contact us</h4>
-  <img src="docs/read-me-images/wireframe-contactmsg.png"><br>
+  <img src="docs/read-me-images/wireframe/contactmsg.png"><br>
   <h4>Submit message</h4>
-  <img src="docs/read-me-images/wireframe-profile.png"><br>
+  <img src="docs/read-me-images/wireframe/profile.png"><br>
   <h4>User profile</h4>
-  <img src="docs/read-me-images/wireframe-footer.png"><br>
+  <img src="docs/read-me-images/wireframe/footer.png"><br>
   <h4>Footer</h4>
-  <img src="docs/read-me-images/wireframe-signout.png"><br>
+  <img src="docs/read-me-images/wireframe/signout.png"><br>
   <h4>Sign out</h4>
 </details>
 </details><br>
