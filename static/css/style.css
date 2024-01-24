@@ -490,6 +490,12 @@ a.nav-link {
 form p {
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+/* Contact form styles */
+.contact-us {
+    text-align: center;
 }
 
 /* Contact Button Styles */
