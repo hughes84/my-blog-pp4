@@ -83,10 +83,12 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
   <img src="docs/readme-images/wireframe-home.png"><br>
   <h4>About page</h4>
   <img src="docs/readme-images/wireframe-about.png"><br>
-  <h4>Blogs page</h4>
-  <img src="docs/readme-images/wireframe-blogs.png"><br>
+  <h4>About more</h4>
+  <img src="docs/readme-images/wireframe-aboutmore.png"><br>
+  <h4>Blog page</h4>
+  <img src="docs/readme-images/wireframe-blog.png"><br>
   <h4>Blog user comments</h4>
-  <img src="docs/readme-images/wireframe-blogcomments.png"><br>
+  <img src="docs/readme-images/wireframe-comments.png"><br>
   <h4>Recipes</h4>
   <img src="docs/readme-images/wireframe-recipe.png"><br>
   <h4>Recipe details</h4>
@@ -96,11 +98,11 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
   <h4>Submit message</h4>
   <img src="docs/readme-images/wireframe-contactmsg.png"><br>
   <h4>User profile</h4>
-  <img src="docs/read-me-images/wireframe-profile.png"><br>
-  <h4>Footer</h4>
-  <img src="docs/readme-images/wireframe-footer.png"><br>
-  <h4>Sign out</h4>
-  <img src="docs/readme-images/wireframe-signout.png"><br>
+  <img src="docs/readme-images/wireframe-profile.png"><br>
+  <h4>Sign in</h4>
+  <img src="docs/readme-images/wireframe-signin.png"><br>
+  <h4>Sign up</h4>
+  <img src="docs/readme-images/wireframe-signup.png"><br>
 </details>
 </details><br>
 
