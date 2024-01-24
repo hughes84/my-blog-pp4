@@ -20,6 +20,11 @@ The fully deployed project can be accessed at [this link](https://nutrition2023-
 # UX
 This website was created using the Five Planes Of Website Design:<br>
 
+### Strategy<hr>
+
+**User Stories** <br>
+User stories can be viewed here on the project [kanban board ](https://github.com/users/hughes84/projects/1)
+
 |   EPIC                                |ID|                                User Story                                                   |
 | :-------------------------------------|--|:------------------------------------------------------------------------------------------- |
 |**CONTENT AND NAVIGATION**             |  ||
@@ -76,6 +81,7 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 
 ### Skeleton<hr>
 **Wireframes**<br>
+The wireframes for mobile were created with [Miro]() tool and can be viewed [below]()<br>
 
 <details>
   <summary>Wire Frames</summary>
