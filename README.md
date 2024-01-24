@@ -10,6 +10,14 @@
 
 ## Table of Contents
 
+- [Overview](#overview)
+- [User Experience](#user-experience)
+- [User Stories](#user-stories)
+- [Project Goal](#project-goal)
+- [Project Objectives](#project-objectives)
+- [Design](#design)
+- [Skeleton](#skeleton)
+
 ## Overview
 This is a project designed and developed to create a friendly atmosphere for those looking to talk nutrition, providing clients with professional, evidence-based nutrition support that they can implement easily, to make long term sustainable changes. It allows the user to learn from professionals as well as gain ideas, tips and support from other users. There is a recipes section where the user can learn how to make simple, quick and healthy snacks and meals with simple ingredients and step by step methods.<br>
 
@@ -17,10 +25,10 @@ This is a project designed and developed to create a friendly atmosphere for tho
 <br><br>
 The fully deployed project can be accessed at [this link](https://nutrition2023-ea03d13919e5.herokuapp.com/).<br><br>
 
-# UX
-This website was created using the Five Planes Of Website Design:<br>
+[Back to Table of Contents](#table-of-contents)
 
-### Strategy<hr>
+# UX
+This website was created using the Five Planes Of Website Design<br>
 
 **User Stories** <br>
 User stories can be viewed here on the project [kanban board ](https://github.com/users/hughes84/projects/1)
@@ -55,6 +63,8 @@ User stories can be viewed here on the project [kanban board ](https://github.co
 |                                       |6B| As a user, I want to get a reply that my messgae has been received|
 |                                       |6C| As a user, I want to see contact information on the website|
 
+[Back to Table of Contents](#table-of-contents)
+
 **Project Goal:**<br>
 To create a blog for those with an interest in nutrition, seeking guidance, information tips or discuss their own experiences and ideas with others and staff members as well.
 
@@ -65,6 +75,8 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 * To implement fully functional features that will ease the staff members' tasks and upgrade clients' experience with the blog features;
 * To make the website responsive and functional on different devices.<br><br>
 
+[Back to Table of Contents](#table-of-contents)
+
 ## Design
 
 #### Colours
@@ -74,6 +86,8 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 #### Typography
 
 * The Roboto font is used as the main font for the whole project.
+
+[Back to Table of Contents](#table-of-contents)
 
 #### Imagery
 
@@ -111,5 +125,7 @@ The wireframes for mobile were created with [Miro]() tool and can be viewed [bel
   <img src="docs/readme-images/wireframe-signup.png"><br>
 </details>
 </details><br>
+
+[Back to Table of Contents](#table-of-contents)
 
 
