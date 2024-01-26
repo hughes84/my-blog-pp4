@@ -88,7 +88,7 @@ class PostDetail(View):
         return render(request, "post_detail.html", context)
 
 
-def deleteComment(request, comment_id):
+def delete_comment(request, comment_id):
     """
     Handle deleting comments.
     """
