@@ -95,7 +95,7 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 
 ### Skeleton<hr>
 **Wireframes**<br>
-The wireframes for mobile were created with [Miro]() tool and can be viewed [below]()<br>
+The wireframes for mobile were created with [Miro]() tool and can be viewed below:<br>
 
 <details>
   <summary>Wire Frames</summary>
