@@ -408,7 +408,7 @@ a.nav-link {
     height: 200px;
     width: 100%;
     background-position: center;
-    background-size: cover;
+    object-fit: cover;
 }
 
 /* Inner Card Container Styles */
@@ -570,6 +570,12 @@ body {
     line-height: 1.5;
     color: #212529;
     background-color: #f7f7f7;
+    max-width: 2000px;
+}
+
+html {
+    display: flex;
+    justify-content: center;
 }
 
 .navbar {
@@ -723,6 +729,13 @@ li {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.errorlist {
+    padding: 5px;
+    background-color: rgb(184, 71, 71);
+    border: 1px solid black;
+    color: white;
 }
 
 .bg-dark {
