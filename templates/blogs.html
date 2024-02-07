@@ -29,9 +29,8 @@
                     <div class="excerpt card-text">
                         <!-- Display the post excerpt -->
                         {% if post.excerpt|length > 100 %}
-                            <p class="part-excerpt">{{ post.excerpt|slice:':100' }}...</p>
-                            <p class="full-excerpt d-none">{{ post.excerpt}}</p>
-                            <button class="read-more btn btn-info">Read More</button>
+                            <p class="part-excerpt">{{ post.excerpt|slice:':100' }}...</p>                           
+                            <a href="{% url 'post_detail' post.slug  %}" class="read-more btn btn-info">Read More</a>
                         {% else %}
                             {{ post.excerpt}}
                         {% endif %}
@@ -63,18 +62,5 @@
 {% endif %}
 </div>
 
-<!-- Script to toggle between full and partial excerpts -->
-<script> 
-$('.read-more').on('click', function(){
-    let readMoreBtn = $(this)
-    readMoreBtn.parent().find('.full-excerpt').toggleClass('d-none')
-    readMoreBtn.parent().find('.part-excerpt').toggleClass('d-none')
-    if(readMoreBtn.text() === 'Read More'){
-        readMoreBtn.text('View Less')
-    }else{
-        readMoreBtn.text('Read More')
-    }
-})
-</script>
 
 {% endblock %}
