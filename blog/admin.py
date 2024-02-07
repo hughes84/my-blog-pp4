@@ -26,15 +26,10 @@ class CommentAdmin(admin.ModelAdmin):
     """
     Custom admin configuration for the Comment model.
     """
-    list_display = ('name', 'body', 'post', 'created_on', 'approved')
-    list_filter = ('approved', 'created_on')
+    list_display = ('name', 'body', 'post', 'created_on')
+    list_filter = ('created_on',)
     search_fields = ('name', 'email', 'body')
 
-    def approve_comments(self, queryset):
-        """
-        Action to approve selected comments.
-        """
-        queryset.update(approved=True)
 
 
 # Inline configuration for RecipeDetail within Recipe admin
