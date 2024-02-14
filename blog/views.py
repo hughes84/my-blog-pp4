@@ -149,7 +149,6 @@ class RecipesView(View):
         form = RecipeForm()
         context = {'recipes': recipes, 'form': form}
         return render(request, self.template_name, context)
-    
     def post(self, request, *args, **kwargs):
         """
         Handle POST requests for updating user profiles.

@@ -53,6 +53,9 @@ class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
+        """
+        Model to provide metadata to the ModelForm.
+        """
         model = User
         fields = ['username', 'email']
 
@@ -62,6 +65,9 @@ class ProfileUpdateForm(forms.ModelForm):
     Form for profile image update
     """
     class Meta:
+        """
+        Model to provide metadata to the ModelForm.
+        """
         model = Profile
         fields = ['image', ]
 
@@ -71,5 +77,8 @@ class RecipeForm(forms.ModelForm):
     Form for creating a recipe
     """
     class Meta:
+        """
+        Model to provide metadata to the ModelForm.
+        """
         model = Recipe
         fields = '__all__'
