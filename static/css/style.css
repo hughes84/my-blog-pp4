@@ -3,6 +3,7 @@
     top: 100px;
     left: 25%;
     width: 50%;
+    z-index: 1000;
 }
 
 /* Body Styles */
@@ -408,7 +409,7 @@ a.nav-link {
     height: 200px;
     width: 100%;
     background-position: center;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* Inner Card Container Styles */
@@ -949,3 +950,44 @@ h1 {
     height: 200px;
     margin: 0 auto;
 }
+
+.add-recipe-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #3498DB;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;  
+  }
+  .add-recipe-button:hover {
+    background-color: #2980B9;
+  }
+  /* Tooltip styles */
+  .add-recipe-button::before {
+    width: 100px;
+    content: attr(title);
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .add-recipe-button:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
