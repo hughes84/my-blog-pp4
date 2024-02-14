@@ -5,7 +5,7 @@ Admin Configuration for Nutrition Blog.
 """
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post, Comment, Hero, RecipeDetail, Recipe
+from .models import Post, Comment, Hero, Recipe
 
 # Register the Post model with SummernoteModelAdmin
 @admin.register(Post)
@@ -32,23 +32,10 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 
-# Inline configuration for RecipeDetail within Recipe admin
-class RecipeDetailInline(admin.TabularInline):
-    """
-    Inline configuration for RecipeDetail within Recipe admin.
-    """
-    model = RecipeDetail
-    extra = 1  # Number of empty forms to display
-
 # Register the Recipe model with RecipeDetailInline
-@admin.register(Recipe)
-class RecipeAdmin(admin.ModelAdmin):
-    """
-    Custom admin configuration for the Recipe model.
-    """
-    inlines = [RecipeDetailInline]
+admin.site.register(Recipe)
 
 
 # Register RecipeDetail and Hero models directly
-admin.site.register(RecipeDetail)
+
 admin.site.register(Hero)
