@@ -131,6 +131,11 @@ The wireframes for mobile were created with [Miro]() tool and can be viewed belo
 
 [Back to Table of Contents](#table-of-contents)
 
+**FLOWCHARTS**<br>
+The Flowchart for my program was created using <b>[draw.io](https://app.diagrams.net/)</b> and it visually represents how the system works.<br>
+<img src="docs/readme-images/flowchart.png"><br>
+<br><br>
+
 ### Surface<hr>
 #### Colour Scheme
 * The primary colour scheme was used for body, headers and nav elements<br> 
@@ -148,3 +153,9 @@ The wireframes for mobile were created with [Miro]() tool and can be viewed belo
 <img src="docs/readme-images/secondary-lightblue.png" width="30%">
 
 [Back to Table of Contents](#table-of-contents)
+
+#### Visual Effects
+* **Box shadows** <br>
+Multiple box shadows were used for the cover, buttons and images. <br>
+* **Animation**<br>
+Some animations were used for creating a dynamic and attractive design
