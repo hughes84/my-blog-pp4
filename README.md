@@ -11,12 +11,28 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [User Experience](#user-experience)
-- [User Stories](#user-stories)
+- [User Experience](#ux)
 - [Project Goal](#project-goal)
-- [Project Objectives](#project-objectives)
 - [Design](#design)
 - [Skeleton](#skeleton)
+- [Wireframes](#wireframes)
+- [Flowchart](#flowchart)
+- [Colour Scheme](#colour-scheme)
+- [Visual Effects](#visual-effects)
+- [Features](#features)
+- [Visual Effects](#visual-effects)
+- [Home Page](#home-page)
+- [About Us Page](#about-us-page)
+- [Blogs Page](#blogs-page)
+- [Comments Page](#comments-page)
+- [Recipes Page](#recipes-page)
+- [Add Recipe Modal](#add-recipe-modal)
+- [Contact Page](#contact-page)
+- [Account Login](#account-login)
+- [Register](#register)
+- [Profile](#profile)
+- [Logout](#logout)
+- [Add Recipe Modal](#add-recipe-modal)
 
 ## Overview
 This is a project designed and developed to create a friendly atmosphere for those looking to talk nutrition, providing clients with professional, evidence-based nutrition support that they can implement easily, to make long term sustainable changes. It allows the user to learn from professionals as well as gain ideas, tips and support from other users. There is a recipes section where the user can learn how to make simple, quick and healthy snacks and meals with simple ingredients and step by step methods.<br>
@@ -66,7 +82,7 @@ User stories can be viewed here on the project [kanban board ](https://github.co
 
 [Back to Table of Contents](#table-of-contents)
 
-**Project Goal:**
+# Project Goal:
 
 To create a blog for those with an interest in nutrition, seeking guidance, information tips or discuss their own experiences and ideas with others and staff members as well.
 
@@ -80,7 +96,7 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 
 [Back to Table of Contents](#table-of-contents)
 
-## Design
+# Design
 
 #### Colours
 
@@ -96,8 +112,9 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 
 * All images on the site are related to the recipes, blogs and website design. There are 3 static images throughout the site. The remaining images will be uploaded by the author to the database.
 
-### Skeleton<hr>
-**Wireframes**<br>
+# Skeleton
+
+## Wireframes
 The wireframes for mobile were created with [Miro]() tool and can be viewed below:<br>
 
 <details>
@@ -131,13 +148,13 @@ The wireframes for mobile were created with [Miro]() tool and can be viewed belo
 
 [Back to Table of Contents](#table-of-contents)
 
-**FLOWCHARTS**<br>
+## Flowchart
+
 The Flowchart for my program was created using <b>[draw.io](https://app.diagrams.net/)</b> and it visually represents how the system works.<br>
 <img src="docs/readme-images/flowchart.png"><br>
 <br><br>
 
-### Surface<hr>
-#### Colour Scheme
+## Colour Scheme
 * The primary colour scheme was used for body, headers and nav elements<br> 
 <img src="docs/readme-images/primary-green.png" width="30%">
 <img src="docs/readme-images/primary-white.png" width="30%">
@@ -154,7 +171,8 @@ The Flowchart for my program was created using <b>[draw.io](https://app.diagrams
 
 [Back to Table of Contents](#table-of-contents)
 
-#### Visual Effects
+## Visual Effects
+
 * **Box shadows** <br>
 Multiple box shadows were used for the cover, buttons and images. <br>
 * **Animation**<br>
@@ -169,6 +187,8 @@ Some animations were used for creating a dynamic and attractive design
 * The hero image welcomes the user with a short message advertising what the website is about. There is a nutrition 
 themed image in the background and a button that takes the user straight to the blogs page.<br>
 
+### About Us Page
+
 ![About Us](docs/readme-images/screen-aboutus.png)
 ![About Us](docs/readme-images/screen-aboutus2.png)
 
@@ -176,12 +196,16 @@ themed image in the background and a button that takes the user straight to the 
 
 [Back to Table of Contents](#table-of-contents)
 
+### Blogs Page
+
 ![Blogs](docs/readme-images/screen-blogs.png)
 ![Blogs](docs/readme-images/screen-blogs2.png)
 
 * In the blogs scetion, the user can see a selection of six different blog topics, with user friendly images. There are buttons again below these images inviting the user to read more where they will be lead to a new screen with more on each blog. Here the user can add their own comment, edit it and delete it.
 
 [Back to Table of Contents](#table-of-contents)
+
+### Comments Page
 
 ![Comments](docs/readme-images/screen-comments.png)
 ![Comments](docs/readme-images/screen-comments2.png)
@@ -191,16 +215,63 @@ themed image in the background and a button that takes the user straight to the 
 
 [Back to Table of Contents](#table-of-contents)
 
+### Recipes Page
+
 ![Recipes](docs/readme-images/screen-recipes.png)
 ![Recipes](docs/readme-images/screen-recipes2.png)
-![Recipes](docs/readme-images/screen-recipesEG.png)
+![Recipes](docs/readme-images/screen-recipeEG.png)
 
 * On out recipe page the user is met with some appealing images of healthy foods. There is a small snippet of info about each recipe and the user is invited to press the recipe button below each image where they are brought to a new screen with some detailed ingredients and method on their chosen recipe.
 
 [Back to Table of Contents](#table-of-contents)
+
+### Add Recipe Modal
 
 ![Recipes](docs/readme-images/screen-addrecipe.png)
 
 * On the bottom right of the recipe page the user will see an + add recipe button where they will be brought to a modal allowing them to add their own recipes which will then be added to the recipes page.
 
 [Back to Table of Contents](#table-of-contents)
+
+### Contact Page
+
+![Contact](docs/readme-images/screen-contact.png)
+
+* The contact page gives the user the option to contact the website admin by filling out a simple form. They must input their name, a valid email and a brief message before submitting. This will then redirect the user to a new screen and thank you message. An email is then sent to the admin.
+
+[Back to Table of Contents](#table-of-contents)
+
+### Account login
+
+![Login](docs/readme-images/screen-login.png)
+
+* When the user presses account on the navbar they will be given options of login or register and profile or logout, depending on their status. 
+The login page requests a username and password and also has a forgot password option which will send an email to users email address.
+
+[Back to Table of Contents](#table-of-contents)
+
+### Register
+
+![Register](docs/readme-images/screen-register.png)
+
+* The registration page promts the user to register their account. They are asked to enter a username, email, password and repeat password. There are criteria to the password which must be met or an error message pops up.
+
+[Back to Table of Contents](#table-of-contents)
+
+### Profile
+
+![Profile](docs/readme-images/screen-profile.png)
+
+* The profile page allows the user to add an image as well as edit their profile picture, username or email address.
+
+[Back to Table of Contents](#table-of-contents)
+
+### Logout
+
+![Logout](docs/readme-images/screen-signout.footer.png)
+
+* If the user wishes to logout they are brought to a new screen where they are asked if they are sure they want to sign out. There is a button to reconfirm which then leads back to the home screen. 
+On this page you can clearly see the footer which is available on every page.
+
+[Back to Table of Contents](#table-of-contents)
+
