@@ -14,10 +14,8 @@ from django.conf import settings
 from django.views.generic import DeleteView
 from django.apps import apps
 from django.contrib import messages
-from .models import Post, Hero, Recipe, RecipeDetail, Profile, Comment
-from .forms import CommentForm, ContactForm, UserUpdateForm, ProfileUpdateForm
-
-
+from .models import Post, Hero, Recipe, Profile, Comment
+from .forms import CommentForm, ContactForm, UserUpdateForm, ProfileUpdateForm, RecipeForm
 
 # pylint: disable=no-member
 
@@ -45,7 +43,7 @@ class PostDetail(View):
         """Handle GET request and render post details."""
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -58,34 +56,32 @@ class PostDetail(View):
             "comment_form": CommentForm()
         })
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, comment_id=None, *args, **kwargs):
         """Handle POST request for adding comments to a post."""
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
+
+            if comment_id:
+                existing_comment = get_object_or_404(Comment, pk=comment_id)
+                existing_comment.email = request.user.email
+                existing_comment.name = request.user.username
+                existing_comment.body = comment_form.cleaned_data['body']
+                existing_comment.post = post
+                existing_comment.save()
+                messages.success(request, 'Comment updated')
+            else:
+                comment_form.instance.email = request.user.email
+                comment_form.instance.name = request.user.username
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.save()
+                messages.success(request, 'New comment added')
         else:
-            comment_form = CommentForm()
-
-        context = {
-            "post": post,
-            "comments": comments,
-            "commented": True,
-            "comment_form": comment_form,
-            "liked": liked
-        }
-
-        return render(request, "post_detail.html", context)
+            messages.error(request, comment_form.errors)
+        return redirect('post_detail', post.slug)
 
 
 def delete_comment(request, comment_id):
@@ -93,8 +89,7 @@ def delete_comment(request, comment_id):
     Handle deleting comments.
     """
     Comment.objects.filter(id=comment_id).delete()
-    messages.success(request,'comment deleted')
-    return JsonResponse({'status':'success','message':'comment deleted'},status=200)
+    return JsonResponse({'status':'success','message':'Comment deleted'},status=200)
 
 class PostLike(View):
     """View for handling post likes."""
@@ -151,9 +146,24 @@ class RecipesView(View):
     def get(self, request, *args, **kwargs):
         """Handle GET request and render the Recipes page."""
         recipes = Recipe.objects.all()
-        context = {'recipes': recipes}
+        form = RecipeForm()
+        context = {'recipes': recipes, 'form': form}
         return render(request, self.template_name, context)
+    
+    def post(self, request, *args, **kwargs):
+        """
+        Handle POST requests for updating user profiles.
+        """
 
+        if request.method == 'POST':
+            form = RecipeForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Recipe added!')
+
+                return redirect('recipes')
+            messages.error(request, form.errors)
+        return redirect('recipes')
 
 class RecipeDetailView(View):
     """View for rendering details of a specific recipe."""
@@ -161,8 +171,7 @@ class RecipeDetailView(View):
 
     def get(self, request, recipe_id, *args, **kwargs):
         recipe = get_object_or_404(Recipe, id=recipe_id)
-        recipedetail = RecipeDetail.objects.filter(recipe=recipe)
-        context = {'recipedetail': recipedetail[0]}
+        context = {'recipedetail': recipe}
         return render(
             request,
             self.template_name,
