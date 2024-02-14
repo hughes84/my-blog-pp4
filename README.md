@@ -1,6 +1,6 @@
 # Nurtition 2023 - Nutrition Blog
 
-"mock-up"
+![Mockup](docs/readme-images/mockup.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/hughes84/my-blog-pp4?color=red)
 ![GitHub contributors](https://img.shields.io/github/contributors/hughes84/my-blog-pp4?color=orange)
