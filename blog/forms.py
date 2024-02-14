@@ -6,7 +6,7 @@ Forms for Nutrition Blog
 """
 from django import forms
 from django.contrib.auth.models import User
-from .models import Comment, Profile
+from .models import Comment, Profile, Recipe
 
 
 
@@ -65,3 +65,11 @@ class ProfileUpdateForm(forms.ModelForm):
         model = Profile
         fields = ['image', ]
 
+
+class RecipeForm(forms.ModelForm):
+    """
+    Form for creating a recipe
+    """
+    class Meta:
+        model = Recipe
+        fields = '__all__'
