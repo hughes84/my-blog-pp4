@@ -58,7 +58,7 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    
+
 
     class Meta:
         """
@@ -74,22 +74,14 @@ class Recipe(models.Model):
     Model representing a recipe.
     """
     title = models.CharField(max_length=255)
-    description = models.TextField()
     preparation_time = models.PositiveIntegerField()
     recipeimage = CloudinaryField('image', default='place_holder')
     servings = models.PositiveIntegerField()
-
-class RecipeDetail(models.Model):
-    """
-    Model representing details of a recipe.
-    """
-    recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, related_name='details')
     ingredients = models.TextField()
-    instructions = models.TextField()
-    notes = models.TextField()
+    instructions = models.TextField(default='place_holder')
 
     def __str__(self):
-        return f"{self.recipe.title} - Details"
+        return f"{self.title} - Details"
 
 
 class Profile(models.Model):
