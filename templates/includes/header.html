@@ -27,30 +27,30 @@
 
         <ul class="navbar-nav ml-auto">
 
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Home
+          <li class="nav-item">
+            <a class="nav-link {% if '/' == request.path %}active {% endif %}" href="{% url 'home' %}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          <li class="nav-item ">
+            <a href="{% url 'aboutus' %}" class="nav-link {% if 'aboutus' in request.path %}active {% endif %}">About Us</a>
           </li>
 
          <li class="nav-item">
-            <a href="{% url 'posts' %}" class="nav-link">Blogs</a>
+            <a href="{% url 'posts' %}" class="nav-link {% if 'posts' in request.path %}active {% endif %}">Blogs</a>
           </li>
 
           <li class="nav-item">
-            <a href="{% url 'recipes' %}" class="nav-link">Recipes</a>
+            <a href="{% url 'recipes' %}" class="nav-link {% if 'recipes' in request.path or 'recipedetail' in request.path %}active {% endif %}">Recipes</a>
           </li>
 
           <li class="nav-item">
-            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            <a href="{% url 'contact' %}" class="nav-link {% if 'contact' in request.path %}active {% endif %}">Contact</a>
           </li>
 
           <li class="nav-list-item position-relative">
-            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link {% if 'login' in request.path or 'signup' in request.path or 'logout' in request.path or 'profile' in request.path %}active {% endif %}" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account
             </a>
             <!-- Account dropdown menu -->
