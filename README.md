@@ -30,7 +30,8 @@ The fully deployed project can be accessed at [this link](https://nutrition2023-
 # UX
 This website was created using the Five Planes Of Website Design<br>
 
-**User Stories** <br>
+**User Stories**
+
 User stories can be viewed here on the project [kanban board ](https://github.com/users/hughes84/projects/1)
 
 |   EPIC                                |ID|                                User Story                                                   |
@@ -65,10 +66,12 @@ User stories can be viewed here on the project [kanban board ](https://github.co
 
 [Back to Table of Contents](#table-of-contents)
 
-**Project Goal:**<br>
+**Project Goal:**
+
 To create a blog for those with an interest in nutrition, seeking guidance, information tips or discuss their own experiences and ideas with others and staff members as well.
 
-**Project Objectives:**<br> 
+**Project Objectives:**
+
 * To create a website with a simple and intuitive User Experience;
 * To add content that is relevant to the topic and helps create a better understanding;
 * To be able to differentiate between client and staff member accounts;
@@ -128,4 +131,20 @@ The wireframes for mobile were created with [Miro]() tool and can be viewed belo
 
 [Back to Table of Contents](#table-of-contents)
 
+### Surface<hr>
+#### Colour Scheme
+* The primary colour scheme was used for body, headers and nav elements<br> 
+<img src="docs/readme-images/primary-green.png" width="30%">
+<img src="docs/readme-images/primary-white.png" width="30%">
+<img src="docs/readme-images/primary-black.png" width="30%">
+<img src="docs/readme-images/primary-grey.png" width="30%">
+<img src="docs/readme-images/primary-orange.png" width="30%">
+<br>
 
+* The secondary colour scheme was used for buttons, warnings, errors or for highlighting important information.<br>
+<img src="docs/readme-images/secondary-blue.png" width="30%">
+<img src="docs/readme-images/secondary-gray.png" width="30%">
+<img src="docs/readme-images/secondary-green.png" width="30%">
+<img src="docs/readme-images/secondary-lightblue.png" width="30%">
+
+[Back to Table of Contents](#table-of-contents)
