@@ -159,3 +159,13 @@ The Flowchart for my program was created using <b>[draw.io](https://app.diagrams
 Multiple box shadows were used for the cover, buttons and images. <br>
 * **Animation**<br>
 Some animations were used for creating a dynamic and attractive design
+
+## Features
+
+### Home Page
+
+![Home Page](docs/readme-images/screen-home.png)
+
+* The hero image welcomes the user with a short message advertising what the website is about. There is a nutrition 
+themed image in the background and a button that takes the user straight to the blogs page.<br>
+
