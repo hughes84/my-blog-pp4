@@ -169,3 +169,38 @@ Some animations were used for creating a dynamic and attractive design
 * The hero image welcomes the user with a short message advertising what the website is about. There is a nutrition 
 themed image in the background and a button that takes the user straight to the blogs page.<br>
 
+![About Us](docs/readme-images/screen-aboutus.png)
+![About Us](docs/readme-images/screen-aboutus2.png)
+
+* The About Us page explains about who we are, giving a brief description of a dietician in Co. Tipperary. The user is given the option of learning more by pressing a button below, where they are lead to a new screen with more content.
+
+[Back to Table of Contents](#table-of-contents)
+
+![Blogs](docs/readme-images/screen-blogs.png)
+![Blogs](docs/readme-images/screen-blogs2.png)
+
+* In the blogs scetion, the user can see a selection of six different blog topics, with user friendly images. There are buttons again below these images inviting the user to read more where they will be lead to a new screen with more on each blog. Here the user can add their own comment, edit it and delete it.
+
+[Back to Table of Contents](#table-of-contents)
+
+![Comments](docs/readme-images/screen-comments.png)
+![Comments](docs/readme-images/screen-comments2.png)
+![Comments](docs/readme-images/screen-comment3.png)
+
+* Note: The user can only edit and delete their own comments and must be logged in to do so.
+
+[Back to Table of Contents](#table-of-contents)
+
+![Recipes](docs/readme-images/screen-recipes.png)
+![Recipes](docs/readme-images/screen-recipes2.png)
+![Recipes](docs/readme-images/screen-recipesEG.png)
+
+* On out recipe page the user is met with some appealing images of healthy foods. There is a small snippet of info about each recipe and the user is invited to press the recipe button below each image where they are brought to a new screen with some detailed ingredients and method on their chosen recipe.
+
+[Back to Table of Contents](#table-of-contents)
+
+![Recipes](docs/readme-images/screen-addrecipe.png)
+
+* On the bottom right of the recipe page the user will see an + add recipe button where they will be brought to a modal allowing them to add their own recipes which will then be added to the recipes page.
+
+[Back to Table of Contents](#table-of-contents)
