@@ -14,10 +14,10 @@
 - [User Experience](#ux)
 - [Project Goal](#project-goal)
 - [Design](#design)
+- [Colour Scheme](#colour-scheme)
 - [Skeleton](#skeleton)
 - [Wireframes](#wireframes)
 - [Flowchart](#flowchart)
-- [Colour Scheme](#colour-scheme)
 - [Visual Effects](#visual-effects)
 - [Features](#features)
 - [Visual Effects](#visual-effects)
@@ -32,9 +32,13 @@
 - [Register](#register)
 - [Profile](#profile)
 - [Logout](#logout)
-- [Add Recipe Modal](#add-recipe-modal)
+- [Agile Methodology](#agile-methodology)
+- [Responsive Layout and Design](#responsive-layout-and-design)
+- [Database](#database)
+- [Database](#database)
 
 ## Overview
+
 This is a project designed and developed to create a friendly atmosphere for those looking to talk nutrition, providing clients with professional, evidence-based nutrition support that they can implement easily, to make long term sustainable changes. It allows the user to learn from professionals as well as gain ideas, tips and support from other users. There is a recipes section where the user can learn how to make simple, quick and healthy snacks and meals with simple ingredients and step by step methods.<br>
 
 **Nurtition 2023** - Nutrition Blog was developed using Python (Django), HTML, CSS and JavaScript by storing the data in a PostgreSQL database.
@@ -102,6 +106,23 @@ To create a blog for those with an interest in nutrition, seeking guidance, info
 
 * The colour scheme is kept simple by opting mainly for a combination of white text set against the dark backgrounds and black text against the white backgrounds. For the navbar, I selected a bright colour from Bootstrap to highlight the site name as well as encouraging the surrounding colours. The social links and nav bar selections change colour when hovered over to highlight selection. The footer follows suit with this method. Throughout the site the user will see bright, welcoming colours like this when hovering over certain sections as well as colourful buttons on each page.
 
+## Colour Scheme
+* The primary colour scheme was used for body, headers and nav elements<br> 
+<img src="docs/readme-images/primary-green.png" width="30%">
+<img src="docs/readme-images/primary-white.png" width="30%">
+<img src="docs/readme-images/primary-black.png" width="30%">
+<img src="docs/readme-images/primary-grey.png" width="30%">
+<img src="docs/readme-images/primary-orange.png" width="30%">
+<br>
+
+* The secondary colour scheme was used for buttons, warnings, errors or for highlighting important information.<br>
+<img src="docs/readme-images/secondary-blue.png" width="30%">
+<img src="docs/readme-images/secondary-gray.png" width="30%">
+<img src="docs/readme-images/secondary-green.png" width="30%">
+<img src="docs/readme-images/secondary-lightblue.png" width="30%">
+
+[Back to Table of Contents](#table-of-contents)
+
 #### Typography
 
 * The Roboto font is used as the main font for the whole project.
@@ -153,23 +174,6 @@ The wireframes for mobile were created with [Miro]() tool and can be viewed belo
 The Flowchart for my program was created using <b>[draw.io](https://app.diagrams.net/)</b> and it visually represents how the system works.<br>
 <img src="docs/readme-images/flowchart.png"><br>
 <br><br>
-
-## Colour Scheme
-* The primary colour scheme was used for body, headers and nav elements<br> 
-<img src="docs/readme-images/primary-green.png" width="30%">
-<img src="docs/readme-images/primary-white.png" width="30%">
-<img src="docs/readme-images/primary-black.png" width="30%">
-<img src="docs/readme-images/primary-grey.png" width="30%">
-<img src="docs/readme-images/primary-orange.png" width="30%">
-<br>
-
-* The secondary colour scheme was used for buttons, warnings, errors or for highlighting important information.<br>
-<img src="docs/readme-images/secondary-blue.png" width="30%">
-<img src="docs/readme-images/secondary-gray.png" width="30%">
-<img src="docs/readme-images/secondary-green.png" width="30%">
-<img src="docs/readme-images/secondary-lightblue.png" width="30%">
-
-[Back to Table of Contents](#table-of-contents)
 
 ## Visual Effects
 
@@ -275,3 +279,40 @@ On this page you can clearly see the footer which is available on every page.
 
 [Back to Table of Contents](#table-of-contents)
 
+## Database
+
+The project uses the PostgreSQL relational database for storing the data.
+
+## Agile Methodology
+This project was developed using the Agile methodology.<br>
+All epics and user stories implementation progress was registered using [Github issues](https://github.com/hughes84/my-blog-pp4/issues). As the user stories were accomplished, they were moved in the Kanban Board from **Epic**,**User stories**, **To Do**, to **In-progress**, **Testing** and **Done** lists. 
+
+## Responsive Layout and Design
+The project design has been adapted to all types of devices using Bootstrap predefined breakpoints. For intermediate devices where the design didn't fit accordingly, custom breakpoints were used.
+
+**Breakpoints:**
+    - max-width:575.98px
+    - max-width:991.98px
+    - max-width:1300.98px
+
+[Back to Table of Contents](#table-of-contents)
+
+## Tools Used
+
+[GitHub](https://github.com/) - used for hosting the source code of the program<br>
+[Visual Studio](https://code.visualstudio.com/) - for writing and testing the code<br>
+[Heroku](https://dashboard.heroku.com/) - used for deploying the project<br>
+[Miro](https://miro.com/) - for creating the wireframes<br>
+[Draw.io](http://draw.io/) - used for creating the Flowchart and Database relational schema<br>
+[Favicon.io](https://favicon.io/) - used for generating the website favicon<br>
+[Font Awesome](https://fontawesome.com/) - for creating atractive UX with icons<br>
+[Bootstrap5](https://getbootstrap.com/) - for adding predifined styled elements and creating responsiveness<br>
+[Google Fonts](https://fonts.google.com/) - for typography<br>
+[JsHint](https://jshint.com/) - used for validating the javascript code<br>
+[PEP8 Validator](http://pep8online.com/) - used for validating the python code<br>
+[HTML - W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) - used for validating the HTML<br>
+[CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) - used for validating the CSS<br>
+[ElephantSQL](https://www.elephantsql.com/) - for storing static data<br>
+LightHouse - for testing performance<br>
+
+[Back to Table of Contents](#table-of-contents)
