@@ -31,16 +31,18 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary cursor-pointer"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
@@ -75,38 +77,71 @@
                             {{ comment.created_on }}
                         </span> wrote:
                         {% if comment.name == user.username %}
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            x
-                          </button>
-                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalCenter">
+                            X
+                        </button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal">
+                            Edit
+                        </button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure you want to delete comment?</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure you want to delete
+                                        comment?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                                 <div class="modal-body">
-                                  {{ comment }}
+                                    {{ comment }}
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  
-                                  <button data-dismiss="modal" data-comment_id=".{{comment.id}}" class="delete-comment btn-info btn float-right delete-comment-icon" 
-                                    data-url="{% url 'delete' comment_id=comment.id %}">Delete</button>
-                                    
-                                    
-                                
-            
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                    <button data-dismiss="modal" data-comment_id=".{{comment.id}}"
+                                        class="delete-comment btn-info btn float-right delete-comment-icon"
+                                        data-url="{% url 'delete' comment_id=comment.id %}">Delete</button>
+
+
+
+
                                 </div>
-                              </div>
                             </div>
-                          </div>
-                    
+                        </div>
+                    </div>
+                    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Edit comment</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="{% url 'edit_comment' post.slug comment.id %}"
+                                        style="margin-top: 1.3em;">
+
+                                        {% csrf_token %}
+                                        <textarea class="form-control animated" cols="50" id="new-review" name="body"
+                                            placeholder="Enter your review here..." required
+                                            rows="5">{{ comment.body }}</textarea>
+                                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {% endif %}
                     </p>
-                    
+
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
@@ -118,8 +153,8 @@
         <div class="col-md-6 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
-                
-                
+
+
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
@@ -128,8 +163,8 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
-                
-                
+
+
             </div>
         </div>
         {% endif %}
@@ -137,42 +172,42 @@
 </div>
 
 <script>
-    $('.delete-comment').on('click', function(e) {
-    let url= $(this).data('url')
-    let commentId=$(this).data('comment_id')
-    $.ajax({
-        type: 'POST',
-        url: url,
-        headers: {'X-CSRFToken': '{{csrf_token}}'},
-        success: (response) => {
-            var message = '<div id="messages" class="container mt-3 pull-right">' +
-                '<div class="alert alert-success alert-dismissible" role="alert">' +
+    $('.delete-comment').on('click', function (e) {
+        let url = $(this).data('url')
+        let commentId = $(this).data('comment_id')
+        $.ajax({
+            type: 'POST',
+            url: url,
+            headers: { 'X-CSRFToken': '{{csrf_token}}' },
+            success: (response) => {
+                var message = '<div id="messages" class="container mt-3 pull-right">' +
+                    '<div class="alert alert-success alert-dismissible" role="alert">' +
                     '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                        '<span aria-hidden="true">&times;</span>' +
+                    '<span aria-hidden="true">&times;</span>' +
                     '</button>' +
                     response.message +
-                '</div>' +
-              '</div>';
+                    '</div>' +
+                    '</div>';
 
-$('.messages').append(message);
-$(commentId).remove()
-        },
-        error: function(error) {
-            console.log(error)
-            var message = '<div id="messages" class="container mt-3 pull-right">' +
-                '<div class="alert alert-danger alert-dismissible" role="alert">' +
+                $('.messages').append(message);
+                $(commentId).remove()
+            },
+            error: function (error) {
+                console.log(error)
+                var message = '<div id="messages" class="container mt-3 pull-right">' +
+                    '<div class="alert alert-danger alert-dismissible" role="alert">' +
                     '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                        '<span aria-hidden="true">&times;</span>' +
+                    '<span aria-hidden="true">&times;</span>' +
                     '</button>' +
                     'an error occured deleting comment' +
-                '</div>' +
-              '</div>';
+                    '</div>' +
+                    '</div>';
 
-$('.messages').append(message);
-$(commentId).remove()
+                $('.messages').append(message);
+                $(commentId).remove()
 
-        }
-    });
-})
+            }
+        });
+    })
 </script>
 {% endblock %}
