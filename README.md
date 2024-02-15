@@ -42,12 +42,12 @@
   - [Manual Testing](#manual-testing)
   - [Frontend](#frontend)
   - [Backend Admin Panel](#backend-admin-panel)
-  - [Creating the Django app](#creating-the-django-app)
+- [Creating the Django app](#creating-the-django-app)
   - [Deployment of This Project](#deployment-of-this-project)
   - [Final Deployment](#final-deployment)
   - [Forking This Project](#forking-this-project)
   - [Cloning This Project](#cloning-this-project)
-  - [Credits](#credits)
+- [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
 
