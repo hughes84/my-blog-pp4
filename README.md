@@ -228,7 +228,6 @@ themed image in the background and a button that takes the user straight to the 
 
 ![Comments](docs/readme-images/screen-comments.png)
 ![Comments](docs/readme-images/screen-comments2.png)
-![Comments](docs/readme-images/screen-comment3.png)
 
 * Note: The user can only edit and delete their own comments and must be logged in to do so.
 
