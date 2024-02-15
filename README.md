@@ -42,6 +42,7 @@
   - [Manual Testing](#manual-testing)
   - [Frontend](#frontend)
   - [Backend Admin Panel](#backend-admin-panel)
+  - [Fixed Bugs](#fixed-bugs) 
 - [Creating the Django app](#creating-the-django-app)
   - [Deployment of This Project](#deployment-of-this-project)
   - [Final Deployment](#final-deployment)
@@ -384,6 +385,17 @@ this action are working without errors.
 ### Backend Admin Panel
 * I have tested the Admin Panel repeatedly since the start of the project development. All the models are working without issues.  
 I have created, deleted, and updated data in all models without errors. The models have the behavior expected for what they were built for.
+
+[Back to Table of Contents](#table-of-contents)
+
+* **All known bugs have been fixed**
+
+## Fixed bugs
+
+| **Bug** | **Fix** |
+| --- | --- |
+| Bug: Performance is very low | Solution: Load Css and Javascript asynchronously |
+| Bug:  While I was developing the project I tried to merge my recipe model and my recipe detail model and when I tried to migrate the changes I got an error in the terminal telling me the terminal required a default number for the new foreign key. | I entered no and closed terminal and entered default value in the model itself
 
 [Back to Table of Contents](#table-of-contents)
 
