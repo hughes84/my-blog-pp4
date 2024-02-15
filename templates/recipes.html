@@ -16,7 +16,7 @@
                     <!-- Recipe Description -->
                     <p class="card-text">{{ recipe.ingredients|slice:':30' }}...</p>
                     <!-- Link to Recipe Detail Page -->
-                    <a type="button" class="btn btn-primary mb" href="{% url 'recipedetail' recipe.id %}">Recipe</a>
+                    <a class="btn btn-primary mb" href="{% url 'recipedetail' recipe.id %}">Recipe</a>
                 </div>
             </div>
             <!-- End Recipe Card -->
@@ -25,9 +25,9 @@
 </div>
 <!-- End Recipe Card Section -->
 <!-- Button trigger modal -->
-<div type="button" class="add-recipe add-recipe-button" title="add-recipe" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="add-recipe add-recipe-button" title="add-recipe" data-toggle="modal" data-target="#exampleModal">
     <i class="fa-solid fa-plus h2 m-0"></i>
-</div>
+</button>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

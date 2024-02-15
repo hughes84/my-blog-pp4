@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 
-<!------ Include the above in your HEAD tag ---------->
 
 <div class="w-100 h-100">
     <!-- Displaying the title of the recipe -->
@@ -11,7 +10,7 @@
     </h3>
     <div class="containers">
         <!-- Displaying the image of the recipe -->
-        <img src="{{recipedetail.recipeimage.url}}">
+        <img alt="recipe image" src="{{recipedetail.recipeimage.url}}">
         <!-- Table to present Ingredients and Method -->
         <table class="table mt-2 table-bordered table-striped table-hover table-condensed table-responsive">
             <thead>

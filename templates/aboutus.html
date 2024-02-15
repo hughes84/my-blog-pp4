@@ -1,40 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Blog - About Us</title>
+</head>
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
+
 <section class="about-us py-5 px-2 " id="about-us">
-    <div class="container-fluid mt-5">
-	<div class="row">
-		<div class="col-md-6">
-		    <h1 class='text-success'>Who Are We?</h1>
-		    <h2>Dietitian in Tipperary</h2>
-		    <hr>
-		    <p>I am a dietitian based in An Port Nua, Co.Tipperary. My speciality areas centre
+	<div class="container-fluid mt-5">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class='text-success'>Who Are We?</h1>
+				<h2>Dietitian in Tipperary</h2>
+				<hr>
+					<p>I am a dietitian based in An Port Nua, Co.Tipperary. My speciality areas centre
                 around sports nutrition, weight management, and aiding those I work with make more
-                successful & long term changes to their diet.<br>
+                successful & long term changes to their diet.
+						<br>
                 I also work with a wider general range ofclients with a variety of issues ranging from 
                 simple nutrient deficiencies to diabetes management. I offer advice on food and nutrition 
-                to help people improve their health and wellbeing.<br>
+                to help people improve their health and wellbeing.
+							<br>
                 I help people make informed decisions about their dietary intake and develop customised
-                nutrition plans to meet a person's individual health needs and lifestyle.</p>
-		    <button id="know-more" type="button" class="btn btn-success">Let's Know More</button>
-		</div>
-		<div class="col-md-5 overflow-hidden mt-2">
-		    <img class="w-100" src="{% static 'dietitian.png' %}" alt="">
-		</div>
-	</div>
-</div>
-</section>
-<!-- About Us Section - Bootstrap Brain Component -->
-<section id="toggle-section" class="mb-10 d-none">
-    <div class="aboutus-container">
-        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-
-            <!-- Left Column - Introduction -->
-            <div class="col-12">
-                <h2 class="mb-3">What we offer!</h2>
-                <p class="lead fs-4 text-secondary mb-3">Gut Nutrition</p>
-                <p class="mb-5">If you notice signs of poor gut health, lifestyle factors may help improve your
+                nutrition plans to meet a person's individual health needs and lifestyle.
+							</p>
+							<button id="know-more" type="button" class="btn btn-success">Let's Know More</button>
+						</div>
+						<div class="col-md-5 overflow-hidden mt-2">
+							<img class="w-100" src="{% static 'dietitian.png' %}" alt="">
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- About Us Section - Bootstrap Brain Component -->
+				<section id="toggle-section" class="mb-10 d-none">
+					<div class="aboutus-container">
+						<div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+							<!-- Left Column - Introduction -->
+							<div class="col-12">
+								<h2 class="mb-3">What we offer!</h2>
+								<p class="lead fs-4 text-secondary mb-3">Gut Nutrition</p>
+								<p class="mb-5">If you notice signs of poor gut health, lifestyle factors may help improve your
                     gut microbiome and benefit your overall health. Dietary fibre in foods can improve your gut 
                     health as it can help keep us regular, reduce the risk of bowel cancer and feed the healthy 
                     bacteria in our gut. Wholefoods, such as fruits, vegetables, legumes, wholegrains and nuts,
@@ -44,24 +54,24 @@
                     microorganisms are harmful to our health, but many are incredibly beneficial and even
                     necessary for a healthy body. Source indicates that having a large variety of bacteria in 
                     the gut may help reduce the risk of conditions like diabetes, inflammatory bowel disease,
-                    and psoriatic arthritis.</p>                     
-            </div>
-            <!-- Right Column - Services Offered -->
-            <div class="col-12">
-                <h2 class="mb-3">What we deliver!</h2>
-                <p class="lead fs-4 text-secondary mb-3">Honesty and professionalism</p>
-                <p class="mb-5">When considering whether seeing a nutritionist is worth your time and
+                    and psoriatic arthritis.</p>
+							</div>
+							<!-- Right Column - Services Offered -->
+							<div class="col-12">
+								<h2 class="mb-3">What we deliver!</h2>
+								<p class="lead fs-4 text-secondary mb-3">Honesty and professionalism</p>
+								<p class="mb-5">When considering whether seeing a nutritionist is worth your time and
                     money, keep in mind the long-term benefits. Many people would agree that improvements in
                     your energy, mood, and overall health are definitely worth it. This may even mean fewer
                     health complications and fewer medications to pay for in the future. We will help you 
                     find substitutions to keep your diet nutritious and above all enjoyable. We offer 
                     accurate, practical advice to improve the way you eat and feel. Nutrition can be confusing, 
                     especially with the amount of nutrition advice and information that surrounds all of us.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<script>
+							</div>
+						</div>
+					</div>
+				</section>
+				<script>
     $("#know-more").on("click", function(){
         if($(this).text()==="Let's Know More"){
             $(this).text("View Less")

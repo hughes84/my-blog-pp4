@@ -9,7 +9,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-#pylint: disable=no-member
+# pylint: disable=no-member
 
 class Hero(models.Model):
     """
