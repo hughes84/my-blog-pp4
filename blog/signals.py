@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from .models import Profile
 
 
-# pylint: disable=no-member
+# pylint: disable = no-member
 
 @receiver(post_save, sender = User)
 
@@ -14,7 +14,7 @@ def create_user_profile(sender, instance, created, **kwargs):
     Signal receiver function to create a user profile when new user is created.
     """
     if created:
-        Profile.objects.create(user=instance)
+        Profile.objects.create(user = instance)
 
 @receiver(post_save, sender = User)
 
