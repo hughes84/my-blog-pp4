@@ -229,7 +229,6 @@ themed image in the background and a button that takes the user straight to the 
 ### Recipes Page
 
 ![Recipes](docs/readme-images/screen-recipes.png)
-![Recipes](docs/readme-images/screen-recipes2.png)
 ![Recipes](docs/readme-images/screen-recipeEG.png)
 
 * On out recipe page the user is met with some appealing images of healthy foods. There is a small snippet of info about each recipe and the user is invited to press the recipe button below each image where they are brought to a new screen with some detailed ingredients and method on their chosen recipe.
