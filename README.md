@@ -14,28 +14,35 @@
 - [User Experience](#ux)
 - [Project Goal](#project-goal)
 - [Design](#design)
-- [Colour Scheme](#colour-scheme)
+  - [Colour Scheme](#colour-scheme)
 - [Skeleton](#skeleton)
-- [Wireframes](#wireframes)
-- [Flowchart](#flowchart)
-- [Visual Effects](#visual-effects)
+  - [Wireframes](#wireframes)
+  - [Flowchart](#flowchart)
+  - [Visual Effects](#visual-effects)
 - [Features](#features)
-- [Visual Effects](#visual-effects)
-- [Home Page](#home-page)
-- [About Us Page](#about-us-page)
-- [Blogs Page](#blogs-page)
-- [Comments Page](#comments-page)
-- [Recipes Page](#recipes-page)
-- [Add Recipe Modal](#add-recipe-modal)
-- [Contact Page](#contact-page)
-- [Account Login](#account-login)
-- [Register](#register)
-- [Profile](#profile)
-- [Logout](#logout)
+  - [Visual Effects](#visual-effects)
+  - [Home Page](#home-page)
+  - [About Us Page](#about-us-page)
+  - [Blogs Page](#blogs-page)
+  - [Comments Page](#comments-page)
+  - [Recipes Page](#recipes-page)
+  - [Add Recipe Modal](#add-recipe-modal)
+  - [Contact Page](#contact-page)
+  - [Account Login](#account-login)
+  - [Register](#register)
+  - [Profile](#profile)
+  - [Logout](#logout)
 - [Agile Methodology](#agile-methodology)
-- [Responsive Layout and Design](#responsive-layout-and-design)
-- [Database](#database)
+  - [Responsive Layout and Design](#responsive-layout-and-design)
+  - [Database](#database)
 - [Testing](#testing)
+  - [Lighthouse](#lighthouse)
+  - [HTML Validation](#html-validation)
+  - [CSS Validation](#css-validation)
+  - [Manual Testing](#manual-testing)
+  - [Frontend](#frontend)
+  - [Backend Admin Panel](#backend-admin-panel)
+  - [Manual Testing](#manual-testing)
 
 ## Overview
 
@@ -326,11 +333,50 @@ LightHouse - for testing performance<br>
 * Python testing was done using the PEP8 Online to ensure there were no syntax errors in the project. All python files
 were entered into the online checker and no errors were found in any of the custom codes.
 
-<!-- ### Lighthouse
+![Pyhton](docs/readme-images/screen-pyhton.png)
+
+## Lighthouse
 Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.
 
-##### Desktop Results:
-![Lighthouse Mobile Result](./assets/readme/test/tasty_blog_lighthouse_desktop_results.jpg).
+![Lighthouse](docs/readme-images/screen-lighthouse.png)
 
-###### Mobile Results:
-![Lighthouse Desktop Result](./assets/readme/test/tasty_blog_lighthouse_mobile_results.jpg). -->
+[Back to Table of Contents](#table-of-contents)
+
+## HTML Validation
+
+![HTML](docs/readme-images/screen-w3c.png)
+
+## CSS Validation
+* Custom CSS was validated using W3C Jigsaw validation service. No were displayed.
+
+![CSS](docs/readme-images/screen-css.png)
+
+[Back to Table of Contents](#table-of-contents)
+
+## Manual Testing
+### Frontend
+* The Signup, Login and Logout system has no issues and is working correctly. All interactive messages to the users displayed appropriately.
+* The Profile Page is working properly. It updates the user information and uploads/updates the 
+user profile image. It shows the interactive message to the user once the update is complete. A realtime clock is also displayed and working correctly.
+* All the internal links are working and bring the user to the right page on the website.
+* All the external links are working and bring the user to the right social media page by opening a new browser tab.
+* The recipes page shows the recipes seperately without issues.
+* When the user is posting a new recipe all the required fields have to be filled otherwise the author cannot submit the post to the database.
+* The drop-down menu in the navbar shows a list for account options.
+* The contact form on the Contact Page is working without any errors.  It sends an email, 
+to the admin, once the user fills in the form and clicks on the submit button. 
+A messages for email success is displayed on the screen.
+* On the Post Details Page, the Like/unlike functionality is working without issues.
+* The comment form has no issues and it submits a new comment once the form is completed by a
+registered user. 
+The comment is displayed once the submit button is pressed. The two interactive messages for 
+this action are working without errors. 
+* The functionality to delete or edit a comment is working correctly. The user can only delete their own comment and must be logged in to do so.  
+
+[Back to Table of Contents](#table-of-contents)
+
+### Backend Admin Panel
+* I have tested the Admin Panel repeatedly since the start of the project development. All the models are working without issues.  
+I have created, deleted, and updated data in all models without errors. The models have the behavior expected for what they were built for.
+
+[Back to Table of Contents](#table-of-contents)
